@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 192.6, "left": 34.8, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -7.2,
+      "left": 48.2,
+      "rotate": 180,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 419.2,
+      "left": 149.6,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-ds1307",
+      "id": "rtc2",
+      "top": -23.9,
+      "left": 410,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -20.5, "left": 211, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -3.6, "left": 138.2, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 72,
+      "left": 124.25,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "rtc2:5V", "mega:5V.1", "red", [ "v96", "h-48.4" ] ],
+    [ "rtc2:GND", "mega:GND.1", "black", [ "v115.2", "h-288" ] ],
+    [ "lcd1:GND", "mega:GND.2", "black", [ "h0", "v-57.6", "h67.2" ] ],
+    [ "lcd1:VCC", "mega:5V", "red", [ "h-9.6", "v-57.5", "h48" ] ],
+    [ "rtc2:SDA", "mega:20", "purple", [ "v105.6", "h-77.1" ] ],
+    [ "lcd1:SDA", "mega:20", "purple", [ "h-19.2", "v-57.4", "h316.8", "v-249.6", "h-88.4" ] ],
+    [ "rtc2:SCL", "mega:21", "cyan", [ "v86.4", "h-86.6" ] ],
+    [ "lcd1:SCL", "mega:21", "cyan", [ "h-28.8", "v-57.3", "h336", "v-278.4", "h-88.5" ] ],
+    [ "btn1:2.r", "mega:GND.1", "black", [ "h-9.8", "v163", "h105.6" ] ],
+    [ "btn1:1.r", "mega:7", "gold", [ "v134.4", "h172.6" ] ],
+    [ "pot1:GND", "mega:GND.1", "black", [ "v124.8", "h-86.2" ] ],
+    [ "pot1:VCC", "mega:5V.1", "red", [ "v105.6", "h135.8" ] ],
+    [ "pot1:SIG", "mega:A0", "green", [ "v96", "h-240.4", "v288", "h288" ] ],
+    [ "led1:C", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "mega:GND.1", "black", [ "h0" ] ],
+    [ "led1:A", "mega:13", "purple", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
