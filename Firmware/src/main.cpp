@@ -6,7 +6,7 @@
  * - Timer 1 Fast PWM: Pin 11 (PB5/OC1A) -> Motor Servo MG996R
  * - Timer 3 Polling Timing: Pin D2 (PE4/Trig), Pin D3 (PE5/Echo) -> HC-SR04
  * - TWI (I2C): Pin 20 (SDA), Pin 21 (SCL) -> RTC DS1307/DS3231 & LCD 16x2 Backpack
- * - Digital Input: Pin D4 (PG5) -> Manual Feed Push Button
+ * - Digital Input: Pin D7 (PH4) -> Manual Feed Push Button
  */
 
 #include <avr/io.h>
@@ -270,9 +270,9 @@ int main(void) {
     servo_init();
     ultrasonic_init();
     
-    // Atur Pin D4 (PG5) untuk Push Button Manual Feed (Input dengan Pull-Up Internal)
-    DDRG &= ~(1 << PG5);
-    PORTG |= (1 << PG5);
+    // Atur Pin D7 (PH4) untuk Push Button Manual Feed (Input dengan Pull-Up Internal)
+    DDRG &= ~(1 << PH4);
+    PORTG |= (1 << PH4);
     
     sei(); // Aktifkan Sakelar Utama Interupsi Global MCU
     
@@ -313,12 +313,12 @@ int main(void) {
         }
         
         // 5. Manajemen Logika Input Kendali Tombol Fisik (Active LOW)
-        if (!(PING & (1 << PG5))) {
+        if (!(PING & (1 << PH4))) {
             _delay_ms(20); // Debouncing sakelar mekanik
-            if (!(PING & (1 << PG5))) {
+            if (!(PING & (1 << PH4))) {
                 flag_beri_makan = 1;
                 sumber_pakan = 2; // Ditrigger oleh Tombol Fisik Kandang
-                while (!(PING & (1 << PG5))); // Kunci eksekusi hingga tombol dilepas
+                while (!(PING & (1 << PH4))); // Kunci eksekusi hingga tombol dilepas
             }
         }
         
