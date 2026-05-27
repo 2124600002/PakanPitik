@@ -251,8 +251,7 @@ uint8_t ambil_level_pakan(void) {
     uint32_t ticks = TCNT3;
     uint32_t jarak_cm = (ticks * 0.5) * 0.0343 / 2; // Formula konversi jarak fisika suara
     
-    // Pemetaan linear persentase wadah pakan (Tinggi Wadah Maksimal = 40 cm)
-    // Ingat, amplitudo diset 25 berdasarkan modul.
+    // Pemetaan linear persentase wadah pakan (Tinggi Wadah Maksimal = 25 cm sesuai modul)
     if (jarak_cm > 25) jarak_cm = 25; 
     uint8_t persentase_stok = ((25 - jarak_cm) * 100) / 25;
     
@@ -271,8 +270,8 @@ int main(void) {
     ultrasonic_init();
     
     // Atur Pin D7 (PH4) untuk Push Button Manual Feed (Input dengan Pull-Up Internal)
-    DDRG &= ~(1 << PH4);
-    PORTG |= (1 << PH4);
+    DDRH &= ~(1 << PH4);
+    PORTH |= (1 << PH4);
     
     sei(); // Aktifkan Sakelar Utama Interupsi Global MCU
     
@@ -312,13 +311,13 @@ int main(void) {
             }
         }
         
-        // 5. Manajemen Logika Input Kendali Tombol Fisik (Active LOW)
-        if (!(PING & (1 << PH4))) {
+        // 5. Manajemen Logika Input Kendali Tombol Fisik (Active LOW) - DI PIN D7 / PH4
+        if (!(PINH & (1 << PH4))) {
             _delay_ms(20); // Debouncing sakelar mekanik
-            if (!(PING & (1 << PH4))) {
+            if (!(PINH & (1 << PH4))) {
                 flag_beri_makan = 1;
                 sumber_pakan = 2; // Ditrigger oleh Tombol Fisik Kandang
-                while (!(PING & (1 << PH4))); // Kunci eksekusi hingga tombol dilepas
+                while (!(PINH & (1 << PH4))); // Kunci eksekusi hingga tombol dilepas
             }
         }
         
