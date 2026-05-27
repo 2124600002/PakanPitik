@@ -47,14 +47,14 @@
     [ "lcd1:VCC", "mega:5V", "red", [ "h-9.6", "v-57.5", "h48" ] ],
     [ "servo1:V+", "mega:5V", "red", [ "v-57.6", "h-326.5" ] ],
     [ "servo1:PWM", "mega:11", "green", [ "v-278.4", "h-307.4" ] ],
-    [ "btn1:1.r", "mega:4", "gold", [ "v134.4", "h191.8" ] ],
     [ "rtc2:SDA", "mega:20", "purple", [ "v105.6", "h-77.1" ] ],
     [ "lcd1:SDA", "mega:20", "purple", [ "h-19.2", "v-57.4", "h316.8", "v-249.6", "h-88.4" ] ],
     [ "rtc2:SCL", "mega:21", "cyan", [ "v86.4", "h-86.6" ] ],
     [ "lcd1:SCL", "mega:21", "cyan", [ "h-28.8", "v-57.3", "h336", "v-278.4", "h-88.5" ] ],
     [ "ultrasonic1:TRIG", "mega:2", "blue", [ "v0" ] ],
     [ "ultrasonic1:ECHO", "mega:3", "white", [ "v86.4", "h-20" ] ],
-    [ "btn1:2.r", "mega:GND.1", "black", [ "h-9.8", "v163", "h105.6" ] ]
+    [ "btn1:2.r", "mega:GND.1", "black", [ "h-9.8", "v163", "h105.6" ] ],
+    [ "btn1:1.r", "mega:7", "gold", [ "v134.4", "h176.6" ] ]
   ],
   "dependencies": {}
 }
