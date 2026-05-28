@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PANGANPITIK Control Center</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="toolbar">
+      <div class="app-brand">
+        <span class="app-icon"></span>
+        <span>PanganPitik</span>
+        <small>Control Center</small>
+      </div>
+      <div class="window-actions" aria-hidden="true">
+        <button>—</button><button>□</button><button>×</button>
+      </div>
+    </section>
+
+    <section class="hero-title">
+      <h1>PANGANPITIK CONTROL CENTER</h1>
+      <div class="title-line"><span></span></div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel live-panel">
+        <header>
+          <h2>Live Status (Wokwi)</h2>
+          <span class="badge online"><i></i>CONNECTED</span>
+        </header>
+        <div class="panel-body live-body">
+          <div class="feed-info">
+            <p>Status: <strong>Terhubung ke Wokwi</strong></p>
+            <label>Level Tangki Pakan:</label>
+            <div class="progress" aria-label="Level Tangki Pakan">
+              <span id="tankBar"></span>
+            </div>
+            <p class="percent"><span id="tankPercent">--</span> %</p>
+          </div>
+          <div class="mini-cards">
+            <div class="mini-card"><small>MODE</small><strong id="modeText">AUTO</strong></div>
+            <div class="mini-card"><small>DEVICE</small><strong id="deviceText">OK</strong></div>
+            <div class="mini-card"><small>LAST FEED</small><strong id="lastFeed">--:--</strong></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel schedule-panel">
+        <header>
+          <h2>Pengaturan Jadwal</h2>
+          <span class="badge schedule">SCHEDULE</span>
+        </header>
+        <div class="panel-body schedule-body">
+          <form id="scheduleForm" class="schedule-form">
+            <label><span>Pagi</span><b>:</b><input type="time" id="pagi" value="07:00" /></label>
+            <label><span>Siang</span><b>:</b><input type="time" id="siang" value="12:00" /></label>
+            <label><span>Sore</span><b>:</b><input type="time" id="sore" value="16:30" /></label>
+            <button type="submit" class="classic-button">Kirim Jadwal</button>
+            <small class="schedule-note">3 jadwal aktif</small>
+          </form>
+        </div>
+      </article>
+    </section>
+
+    <button id="manualFeed" class="manual-button">
+      <span class="bolt">⚡</span>
+      <strong>EKSEKUSI PAKAN MANUAL</strong>
+      <em id="readyStatus">READY</em>
+    </button>
+
+    <section class="panel history-panel">
+      <header>
+        <h2>History Pemberian Pakan</h2>
+        <span class="total-badge">Total data: <b id="totalData">0</b></span>
+      </header>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Waktu Eksekusi</th>
+              <th>Metode</th>
+              <th>Status Tangki</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody">
+            <tr class="empty"><td colspan="3">Belum ada history pemberian pakan</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
