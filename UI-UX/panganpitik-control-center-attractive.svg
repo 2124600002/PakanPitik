@@ -1,0 +1,118 @@
+<svg width="1366" height="768" viewBox="0 0 1366 768" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .txt{font-family:'Segoe UI',Inter,Arial,sans-serif;fill:#2F2F2F}.muted{fill:#6E685F}.panelStroke{stroke:#BDB7AE;stroke-width:1}.line{stroke:#C9C4BC;stroke-width:1}.sectionTitle{font-family:'Segoe UI',Inter,Arial,sans-serif;fill:#2F2F2F;font-size:16px;font-weight:700}.small{font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:12px;fill:#6E685F}.label{font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:11px;font-weight:700;fill:#6E685F;letter-spacing:.5px}.value{font-family:'Segoe UI',Inter,Arial,sans-serif;font-size:20px;font-weight:800;fill:#2F2F2F}.shadow{filter:url(#panelShadow)}
+    </style>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="768"><stop stop-color="#F4F1EA"/><stop offset="1" stop-color="#E7E1D8"/></linearGradient>
+    <linearGradient id="topGrad" x1="0" y1="0" x2="0" y2="30"><stop stop-color="#F9F7F2"/><stop offset="1" stop-color="#D8D1C6"/></linearGradient>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F2EEE7"/><stop offset="1" stop-color="#DED8CF"/></linearGradient>
+    <linearGradient id="panelHead" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#E8E2D8"/><stop offset="1" stop-color="#CFC7BA"/></linearGradient>
+    <linearGradient id="buttonGrad" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#EFEAE1"/><stop offset=".5" stop-color="#D8D2C8"/><stop offset="1" stop-color="#BFB6AA"/></linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#DFF2DE"/><stop offset="1" stop-color="#B7D8B3"/></linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF0CC"/><stop offset="1" stop-color="#E2C27F"/></linearGradient>
+    <linearGradient id="darkTitle" x1="0" y1="42" x2="0" y2="92"><stop stop-color="#3F3B34"/><stop offset="1" stop-color="#1F1F1F"/></linearGradient>
+    <filter id="panelShadow" x="-12%" y="-12%" width="124%" height="145%"><feDropShadow dx="0" dy="1" stdDeviation="0" flood-color="#FFFFFF" flood-opacity=".9"/><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#7D7568" flood-opacity=".16"/></filter>
+    <filter id="innerShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1" stdDeviation="0" flood-color="#FFFFFF" flood-opacity=".8"/></filter>
+    <filter id="titleShadow" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="1" stdDeviation="0" flood-color="#FFFFFF" flood-opacity="1"/><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#9D9488" flood-opacity=".5"/></filter>
+  </defs>
+
+  <rect width="1366" height="768" fill="url(#bgGrad)"/>
+  <path d="M0 104 H1366" stroke="#D4CCC0"/>
+  <path d="M0 356 H1366" stroke="#D4CCC0" opacity=".45"/>
+
+  <g id="Top Application Bar">
+    <rect x="0" y="0" width="1366" height="30" fill="url(#topGrad)" stroke="#BDB7AE"/>
+    <rect x="9" y="8" width="14" height="14" rx="2" fill="#7E735F" stroke="#5F574B"/>
+    <text x="30" y="20" class="txt" font-size="12" font-weight="600">PanganPitik</text>
+    <text x="120" y="20" class="small">Control Center</text>
+    <rect x="1258" y="4" width="35" height="22" fill="#E9E3DA" stroke="#BDB7AE"/><text x="1270" y="19" class="txt" font-size="12">—</text>
+    <rect x="1293" y="4" width="35" height="22" fill="#E9E3DA" stroke="#BDB7AE"/><text x="1306" y="19" class="txt" font-size="11">□</text>
+    <rect x="1328" y="4" width="36" height="22" fill="#E9E3DA" stroke="#BDB7AE"/><text x="1341" y="20" class="txt" font-size="14">×</text>
+  </g>
+
+  <g id="Title Block">
+    <text x="683" y="82" text-anchor="middle" font-family="Segoe UI,Inter,Arial,sans-serif" font-size="34" font-weight="900" letter-spacing="1.6" fill="url(#darkTitle)" filter="url(#titleShadow)">PANGANPITIK CONTROL CENTER</text>
+    <rect x="430" y="96" width="506" height="3" rx="1.5" fill="#B9AFA2"/>
+    <rect x="560" y="96" width="246" height="3" rx="1.5" fill="#7E735F"/>
+  </g>
+
+  <!-- top panels -->
+  <g id="Live Status Panel" class="shadow">
+    <rect x="24" y="118" width="720" height="170" rx="5" fill="url(#panelGrad)" stroke="#BDB7AE"/>
+    <rect x="24" y="118" width="720" height="34" rx="5" fill="url(#panelHead)" stroke="#BDB7AE"/>
+    <text x="42" y="141" class="sectionTitle">Live Status (Wokwi)</text>
+    <rect x="594" y="124" width="126" height="22" rx="11" fill="url(#greenGrad)" stroke="#8FAD89"/>
+    <circle cx="612" cy="135" r="5" fill="#4F8F4A"/>
+    <text x="626" y="140" font-family="Segoe UI,Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#3E733B">CONNECTED</text>
+
+    <text x="42" y="184" class="txt" font-size="14">Status: Terhubung ke Wokwi</text>
+    <text x="42" y="216" class="txt" font-size="14">Level Tangki Pakan:</text>
+    <rect x="42" y="238" width="220" height="20" rx="5" fill="#F7F4EF" stroke="#AAA39A"/>
+    <rect x="42" y="238" width="66" height="20" rx="5" fill="#BEB6AA"/>
+    <line x1="43" y1="239" x2="261" y2="239" stroke="#FFFFFF" opacity=".9"/>
+    <text x="42" y="276" class="txt" font-size="13">-- %</text>
+
+    <g id="Mini Status Cards">
+      <rect x="344" y="174" width="112" height="84" rx="5" fill="#EFEAE1" stroke="#C9C4BC"/>
+      <text x="360" y="198" class="label">MODE</text><text x="360" y="232" class="value">AUTO</text>
+      <rect x="474" y="174" width="112" height="84" rx="5" fill="#EFEAE1" stroke="#C9C4BC"/>
+      <text x="490" y="198" class="label">DEVICE</text><text x="490" y="232" class="value">OK</text>
+      <rect x="604" y="174" width="112" height="84" rx="5" fill="#EFEAE1" stroke="#C9C4BC"/>
+      <text x="620" y="198" class="label">LAST FEED</text><text x="620" y="232" class="value">--:--</text>
+    </g>
+  </g>
+
+  <g id="Schedule Panel" class="shadow">
+    <rect x="768" y="118" width="574" height="170" rx="5" fill="url(#panelGrad)" stroke="#BDB7AE"/>
+    <rect x="768" y="118" width="574" height="34" rx="5" fill="url(#panelHead)" stroke="#BDB7AE"/>
+    <text x="786" y="141" class="sectionTitle">Pengaturan Jadwal</text>
+    <rect x="1210" y="124" width="108" height="22" rx="11" fill="url(#amberGrad)" stroke="#BFA15F"/>
+    <text x="1230" y="140" font-family="Segoe UI,Inter,Arial,sans-serif" font-size="12" font-weight="800" fill="#7A5C1D">SCHEDULE</text>
+
+    <text x="786" y="182" class="txt" font-size="14">Pagi :</text>
+    <rect x="854" y="170" width="86" height="30" rx="2" fill="#FFFFFF" stroke="#9F978D"/><line x1="855" y1="171" x2="939" y2="171" stroke="#7F776E"/><line x1="855" y1="199" x2="939" y2="199" stroke="#FFFFFF"/><text x="866" y="190" class="txt" font-size="14">07:00</text>
+    <text x="786" y="218" class="txt" font-size="14">Siang :</text>
+    <rect x="854" y="206" width="86" height="30" rx="2" fill="#FFFFFF" stroke="#9F978D"/><line x1="855" y1="207" x2="939" y2="207" stroke="#7F776E"/><line x1="855" y1="235" x2="939" y2="235" stroke="#FFFFFF"/><text x="866" y="226" class="txt" font-size="14">12:00</text>
+    <text x="786" y="254" class="txt" font-size="14">Sore :</text>
+    <rect x="854" y="242" width="86" height="30" rx="2" fill="#FFFFFF" stroke="#9F978D"/><line x1="855" y1="243" x2="939" y2="243" stroke="#7F776E"/><line x1="855" y1="271" x2="939" y2="271" stroke="#FFFFFF"/><text x="866" y="262" class="txt" font-size="14">16:30</text>
+
+    <rect x="990" y="210" width="150" height="42" rx="4" fill="url(#buttonGrad)" stroke="#9F978D"/>
+    <line x1="991" y1="211" x2="1139" y2="211" stroke="#FFFFFF" opacity=".95"/>
+    <text x="1065" y="236" text-anchor="middle" class="txt" font-size="14" font-weight="700">Kirim Jadwal</text>
+  </g>
+
+  <g id="Manual Button" class="shadow">
+    <rect x="24" y="310" width="1318" height="54" rx="5" fill="url(#buttonGrad)" stroke="#9F978D"/>
+    <line x1="25" y1="311" x2="1341" y2="311" stroke="#FFFFFF" opacity=".95"/>
+    <rect x="42" y="323" width="30" height="30" rx="5" fill="#C9C4BC" stroke="#8F8578"/>
+    <text x="57" y="345" text-anchor="middle" class="txt" font-size="20">⚡</text>
+    <text x="683" y="345" text-anchor="middle" class="txt" font-size="18" font-weight="900" letter-spacing=".5">EKSEKUSI PAKAN MANUAL</text>
+    <text x="1278" y="343" text-anchor="middle" class="small">READY</text>
+  </g>
+
+  <g id="History Panel" class="shadow">
+    <rect x="24" y="386" width="1318" height="362" rx="5" fill="url(#panelGrad)" stroke="#BDB7AE"/>
+    <rect x="24" y="386" width="1318" height="34" rx="5" fill="url(#panelHead)" stroke="#BDB7AE"/>
+    <text x="42" y="409" class="sectionTitle">History Pemberian Pakan</text>
+    <rect x="1168" y="392" width="150" height="22" rx="11" fill="#EFEAE1" stroke="#C9C4BC"/>
+    <text x="1202" y="408" class="small">Total data: 0</text>
+
+    <rect x="42" y="438" width="1264" height="288" fill="#FFFFFF" stroke="#C9C4BC"/>
+    <rect x="42" y="438" width="1264" height="36" fill="url(#panelHead)" stroke="#AAA39A"/>
+    <rect x="42" y="438" width="420" height="36" fill="none" stroke="#AAA39A"/>
+    <rect x="462" y="438" width="420" height="36" fill="none" stroke="#AAA39A"/>
+    <rect x="882" y="438" width="424" height="36" fill="none" stroke="#AAA39A"/>
+    <text x="54" y="462" class="txt" font-size="13" font-weight="800">Waktu Eksekusi</text>
+    <text x="474" y="462" class="txt" font-size="13" font-weight="800">Metode</text>
+    <text x="894" y="462" class="txt" font-size="13" font-weight="800">Status Tangki</text>
+
+    <rect x="42" y="474" width="1248" height="32" fill="#FFFFFF"/><rect x="42" y="506" width="1248" height="32" fill="#F7F5F0"/><rect x="42" y="538" width="1248" height="32" fill="#FFFFFF"/><rect x="42" y="570" width="1248" height="32" fill="#F7F5F0"/><rect x="42" y="602" width="1248" height="32" fill="#FFFFFF"/><rect x="42" y="634" width="1248" height="32" fill="#F7F5F0"/><rect x="42" y="666" width="1248" height="32" fill="#FFFFFF"/>
+    <line x1="42" y1="506" x2="1290" y2="506" class="line"/><line x1="42" y1="538" x2="1290" y2="538" class="line"/><line x1="42" y1="570" x2="1290" y2="570" class="line"/><line x1="42" y1="602" x2="1290" y2="602" class="line"/><line x1="42" y1="634" x2="1290" y2="634" class="line"/><line x1="42" y1="666" x2="1290" y2="666" class="line"/><line x1="42" y1="698" x2="1290" y2="698" class="line"/>
+    <line x1="462" y1="474" x2="462" y2="726" class="line"/><line x1="882" y1="474" x2="882" y2="726" class="line"/>
+
+    <rect x="1290" y="474" width="16" height="252" fill="#DDD8D1" stroke="#AAA39A"/>
+    <rect x="1292" y="482" width="12" height="64" rx="2" fill="#AAA39A" stroke="#6E685F"/>
+    <line x1="1294" y1="496" x2="1302" y2="496" stroke="#6E685F" opacity=".65"/><line x1="1294" y1="502" x2="1302" y2="502" stroke="#6E685F" opacity=".65"/>
+    <path d="M1298 478 L1294 484 H1302 L1298 478Z" fill="#6E685F"/><path d="M1298 722 L1294 716 H1302 L1298 722Z" fill="#6E685F"/>
+  </g>
+</svg>
