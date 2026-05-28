@@ -214,23 +214,31 @@ uint8_t ambil_level_pakan_simulasi(void) {
 void led_pwm_init(void) {
     DDRB |= (1 << PB7); // Set Pin 13 (PB7) sebagai Output
     
-    // Fast PWM Mode pada Timer 0, output Non-Inverting di OC0A (PB7)
-    TCCR0A = (1 << WGM01) | (1 << WGM00) | (1 << COM0A1);
-    // Prescaler 64 untuk mendapatkan frekuensi PWM yang stabil terlihat mata
+    // Setup Timer 0 untuk Fast PWM, TAPI JANGAN sambungkan ke pin PB7 dulu (COM0A1 = 0)
+    TCCR0A = (1 << WGM01) | (1 << WGM00); 
+    // Prescaler 64
     TCCR0B = (1 << CS01) | (1 << CS00);
     
-    OCR0A = 0; // Kondisi awal LED mati (Duty Cycle 0%)
+    // Paksa pin PB7 menjadi LOW secara digital agar mati total (0% mutlak)
+    PORTB &= ~(1 << PB7); 
 }
 
 void simulasi_eksekusi_pakan(uint16_t durasi_ms) {
-    OCR0A = 255; // LED menyala terang maksimal (Simulasi Servo Membuka)
+    // 1. Sambungkan Timer 0 ke pin PB7 (Enable PWM via bit COM0A1)
+    TCCR0A |= (1 << COM0A1); 
     
-    // Delay non-blocking ringan untuk membiarkan pakan jatuh sesuai durasi
+    // 2. Beri nilai Duty Cycle maksimal (Terang penuh)
+    OCR0A = 255; 
+    
+    // 3. Delay pakan jatuh
     for (uint16_t i = 0; i < durasi_ms / 10; i++) {
         _delay_ms(10);
     }
     
-    OCR0A = 0; // LED mati kembali (Simulasi Servo Menutup)
+    // 4. Putuskan kembali Timer dari pin PB7 (Disable PWM)
+    TCCR0A &= ~(1 << COM0A1); 
+    // 5. Paksa pin PB7 kembali menjadi LOW mutlak
+    PORTB &= ~(1 << PB7); 
 }
 
 // =========================================================================
