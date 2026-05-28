@@ -23,7 +23,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan ayam otomatis berbasis 
 
 ### Support BY :
 >- Dosen Pengampu : Akhmad Hendriawan ST., MT.
->- Mata kuliah : Workshop Mikrokontroller
+>- Mata kuliah : Mikrokontroller
 >- Program Studi : D4 Teknik Elektronika
 >- Politeknik Elektronika Negeri Surabaya
 
@@ -31,14 +31,14 @@ Merancang dan mengimplementasikan sistem pemberian pakan ayam otomatis berbasis 
 
 # <img src="Assets\cover kelompok.png">
 
-|      NRP      |        Nama        |        Jobdesk        |
-| :-----------: |:----------------:  | :-------------------: |
-| 2124600002    | M. Rizky Ramadhan  | Hardware Specialist   |
-| 2124600005    | Musa Hamonangan L. | UI UX Design          |
-| 2124600007    | Muh Yusni Muzaky F.| Project Manager       |
-| 2124600012    | Ferris Adiwidya H. | Software              |
-| 2124600016    | Reyhan Fachri A.H. | 3D Design             |
-| 2124600020    | Muh. Gustav Ardhito| Software              |
+|      NRP      |        Nama        |        Jobdesk          |
+| :-----------: |:----------------:  | :-------------------:   |
+| 2124600002    | M. Rizky Ramadhan  | Project Manager         |
+| 2124600005    | Musa Hamonangan L. | UI UX Design            |
+| 2124600007    | Muh Yusni Muzaky F.| Hardware                |
+| 2124600012    | Ferris Adiwidya H. | Software & Documentation|
+| 2124600016    | Reyhan Fachri A.H. | Software & Documentation|
+| 2124600020    | Muh. Gustav Ardhito| Hardware                |
 
 # Komponen
 
