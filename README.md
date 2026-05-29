@@ -80,13 +80,13 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 ### Blok Diagram
 <img src="Blokdiagram\Blockdiagram baru.png">
 
-### Flowchart Logika SSOT
+### Flowchart Logika
 *Menampilkan alur logika Single Source of Truth (SSOT) dan manajemen pemicu sistem.*
 
 <p align="center">
-  <img src="Flowchart\Flowchart baru 1.png" width="48%">
+  <img src="Flowchart\Flowchart baru 1.png" height="600">
   &nbsp; &nbsp;
-  <img src="Flowchart\Flowchart baru 2.png" width="48%">
+  <img src="Flowchart\Flowchart baru 2.png" height="600">
 </p>
 
 ### UI/UX Web Dashboard
