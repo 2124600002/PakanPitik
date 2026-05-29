@@ -1,40 +1,49 @@
-# <img src="Assets\Logo PakanPitik.png" width="250">
-# PakanPitik
+<div align="center">
+  <img src="Assets\Logo PakanPitik.png" width="250">
+  <h1>PakanPitik</h1>
+  <p><em>"Inovasi cerdas untuk meringankan beban peternak ayam lokal dan mewujudkan kemandirian pangan"</em></p>
+</div>
 
-*"Inovasi cerdas untuk meringankan beban peternak ayam lokal dan mewujudkan kemandirian pangan"*
+<hr>
 
 # Deskripsi Proyek
+<div align="justify">
+Peternak ayam skala lokal seringkali dihadapkan pada tantangan rutinitas yang menguras waktu dan tenaga. Keterlambatan atau ketidakteraturan jadwal pakan dapat menyebabkan tingkat stres yang tinggi dan pertumbuhan unggas yang tidak merata. Di sisi lain, pemberian pakan secara manual seringkali tidak tertakar dengan baik, berujung pada pakan yang tercecer dan terbuang sia-sia (<em>food waste</em>). Hal ini tentu membebani biaya operasional peternak kecil yang sedang berjuang untuk mencapai kemandirian ekonomi.
 
-Peternak ayam skala lokal seringkali dihadapkan pada tantangan rutinitas yang menguras waktu dan tenaga. Keterlambatan atau ketidakteraturan jadwal pakan dapat menyebabkan tingkat stres yang tinggi dan pertumbuhan unggas yang tidak merata. Di sisi lain, pemberian pakan secara manual seringkali tidak tertakar dengan baik, berujung pada pakan yang tercecer dan terbuang sia-sia (*food waste*). Hal ini tentu membebani biaya operasional peternak kecil yang sedang berjuang untuk mencapai kemandirian ekonomi.
+Hadir sebagai solusi atas permasalahan tersebut, <strong>PakanPitik</strong> adalah sistem pemberi pakan ayam otomatis berbasis <em>Internet of Things</em> (IoT) yang dirancang aplikatif untuk meringankan beban peternak. PakanPitik mengeliminasi keharusan peternak untuk terus-menerus berada di kandang. Melalui integrasi <em>dashboard</em> cerdas, peternak dapat memantau sisa stok pakan secara <em>real-time</em> dari mana saja, dan sistem akan secara otomatis mendistribusikan pakan secara presisi sesuai jadwal. Dengan adanya fitur penyesuaian durasi pakan yang dinamis, takaran pakan dapat diatur agar selalu pas sesuai umur dan populasi ayam, sehingga menekan kerugian finansial akibat pakan yang terbuang.
 
-Hadir sebagai solusi atas permasalahan tersebut, **PakanPitik** adalah sistem pemberi pakan ayam otomatis berbasis *Internet of Things* (IoT) yang dirancang aplikatif untuk meringankan beban peternak. PakanPitik mengeliminasi keharusan peternak untuk terus-menerus berada di kandang. Melalui integrasi *dashboard* cerdas, peternak dapat memantau sisa stok pakan secara *real-time* dari mana saja, dan sistem akan secara otomatis mendistribusikan pakan secara presisi sesuai jadwal. Dengan adanya fitur penyesuaian durasi pakan yang dinamis, takaran pakan dapat diatur agar selalu pas sesuai umur dan populasi ayam, sehingga menekan kerugian finansial akibat pakan yang terbuang.
-
-Secara teknis, sistem ini menggunakan arsitektur *Single Source of Truth* (SSOT) di mana **ATmega2560** (diprogram dengan *Pure Bare-Metal C++*) bertindak sebagai *Master Brain* yang menangani seluruh logika aktuator dan kepastian waktu secara presisi tanpa *delay blocking*. Sementara itu, **ESP32** ditugaskan khusus sebagai jembatan jaringan (*WiFi Bridge*) untuk menghubungkan perangkat fisik di kandang dengan Cloud Web Dashboard.
+Secara teknis, sistem ini menggunakan arsitektur <em>Single Source of Truth</em> (SSOT) di mana <strong>ATmega2560</strong> (diprogram dengan <em>Pure Bare-Metal C++</em>) bertindak sebagai <em>Master Brain</em> yang menangani seluruh logika aktuator dan kepastian waktu secara presisi tanpa <em>delay blocking</em>. Sementara itu, <strong>ESP32</strong> ditugaskan khusus sebagai jembatan jaringan (<em>WiFi Bridge</em>) untuk menghubungkan perangkat fisik di kandang dengan Cloud Web Dashboard.
 
 Untuk mendukung sistem otomatisasi dan monitoring, digunakan beberapa komponen utama:
-- **Ultrasonic Sensor HC-SR04** → Mendeteksi jarak dan menghitung sisa ketersediaan (persentase) pakan dalam wadah penampung (hopper).
-- **RTC DS3231** → Modul *Real-Time Clock* untuk menjaga keakuratan jam pemicu jadwal pakan meskipun sistem sempat dimatikan atau putus koneksi internet.
-- **Tombol Pakan Manual** → Mengizinkan peternak untuk mengeksekusi pakan secara fisik langsung dari kandang (Active LOW) saat melakukan inspeksi.
-- **Motor Servo MG90** → Digerakkan oleh *Hardware Timer Fast PWM* untuk membuka dan menutup katup saluran pakan secara akurat.
-- **LCD 16x2 (I2C)** → Menampilkan informasi jam sistem, sisa stok pakan (%), dan status eksekusi secara lokal di kandang.
-- **ATmega2560** → Mikrokontroler AVR utama pusat kendali (*Master*).
-- **ESP32** → Penghubung internet via WiFi untuk sinkronisasi data ke *database* jarak jauh (*Slave/Bridge*).
+<ul>
+  <li><strong>Ultrasonic Sensor HC-SR04</strong> → Mendeteksi jarak dan menghitung sisa ketersediaan (persentase) pakan dalam wadah penampung (hopper).</li>
+  <li><strong>RTC DS3231</strong> → Modul <em>Real-Time Clock</em> untuk menjaga keakuratan jam pemicu jadwal pakan meskipun sistem sempat dimatikan atau putus koneksi internet.</li>
+  <li><strong>Tombol Pakan Manual</strong> → Mengizinkan peternak untuk mengeksekusi pakan secara fisik langsung dari kandang (Active LOW) saat melakukan inspeksi.</li>
+  <li><strong>Motor Servo MG90</strong> → Digerakkan oleh <em>Hardware Timer Fast PWM</em> untuk membuka dan menutup katup saluran pakan secara akurat.</li>
+  <li><strong>LCD 16x2 (I2C)</strong> → Menampilkan informasi jam sistem, sisa stok pakan (%), dan status eksekusi secara lokal di kandang.</li>
+  <li><strong>ATmega2560</strong> → Mikrokontroler AVR utama pusat kendali (<em>Master</em>).</li>
+  <li><strong>ESP32</strong> → Penghubung internet via WiFi untuk sinkronisasi data ke <em>database</em> jarak jauh (<em>Slave/Bridge</em>).</li>
+</ul>
 
 Melalui sentuhan otomatisasi tepat guna ini, PakanPitik tidak hanya meningkatkan efisiensi waktu dan tenaga, tetapi juga memberdayakan peternak lokal agar dapat mengelola peternakannya dengan lebih modern, produktif, dan sejahtera.
+</div>
 
 # Tujuan Proyek
-
-Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasis IoT untuk memantau ketersediaan pakan secara *real-time* dan mengontrol aktuator distribusi pakan (berbasis jadwal atau *remote on-demand*). Proyek ini ditujukan untuk mempermudah pekerjaan peternak, mencegah pakan terbuang percuma melalui fitur durasi dinamis, dan menaikkan efisiensi operasional kandang.
+<div align="justify">
+Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasis IoT untuk memantau ketersediaan pakan secara <em>real-time</em> dan mengontrol aktuator distribusi pakan (berbasis jadwal atau <em>remote on-demand</em>). Proyek ini ditujukan untuk mempermudah pekerjaan peternak, mencegah pakan terbuang percuma melalui fitur durasi dinamis, dan menaikkan efisiensi operasional kandang.
+</div>
 
 ### Support BY :
->- Dosen Pengampu : Akhmad Hendriawan ST., MT.
->- Mata kuliah : Mikrokontroller
->- Program Studi : D4 Teknik Elektronika A
->- Politeknik Elektronika Negeri Surabaya
+>- **Dosen Pengampu** : Akhmad Hendriawan ST., MT.
+>- **Mata kuliah** : Mikrokontroller
+>- **Program Studi** : D4 Teknik Elektronika A
+>- **Politeknik Elektronika Negeri Surabaya**
+
+<hr>
 
 # Anggota Tim
 
-# <img src="Assets\cover kelompok.png">
+<img src="Assets\cover kelompok.png">
 
 |      NRP      |        Nama        |        Jobdesk          |
 | :-----------: |:----------------:  | :-------------------:   |
@@ -43,7 +52,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 | 2124600007    | Muh Yusni Muzaky F.| Hardware                |
 | 2124600012    | Ferris Adiwidya H. | Software & Documentation|
 | 2124600016    | Reyhan Fachri A.H. | Software & Documentation|
-| 2124600020    | Muh. Gustav Ardhito| Hardware                |
+| 2124600020    | M Gustav Ardhito   | Hardware                |
 
 # Komponen Hardware
 
@@ -58,50 +67,62 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 9. Logic Level Converter Bi-Directional (Jembatan UART 5V ↔ 3.3V)
 10. Power Supply 12V DC
 
-# Hardware
+<hr>
 
-# <img src="Hardware\Gambar Hardware.png">
+# Visualisasi Sistem
 
-# Desain 3D
+### Hardware Terpasang
+<img src="Hardware\Gambar Hardware.png">
 
-# <img src="3D\Gambar 3D.png">
+### Desain 3D
+<img src="3D\Gambar 3D.png">
 
-# Blok Diagram
+### Blok Diagram
+<img src="Blokdiagram\Blockdiagram baru.png">
 
-# <img src="Blokdiagram\Blockdiagram baru.png">
-
-# Flowchart
-
+### Flowchart Logika SSOT
 *Menampilkan alur logika Single Source of Truth (SSOT) dan manajemen pemicu sistem.*
-# <img src="Flowchart\Flowchart baru 1.png" width="80%">
 
-# <img src="Flowchart\Flowchart baru 2.png" width="80%">
+<p align="center">
+  <img src="Flowchart\Flowchart baru 1.png" width="48%">
+  &nbsp; &nbsp;
+  <img src="Flowchart\Flowchart baru 2.png" width="48%">
+</p>
 
-# UI/UX Web Dashboard
+### UI/UX Web Dashboard
+<img src="UI-UX\Dashboard Web.png">
 
-# <img src="UIUX\Dashboard Web.png">
-
-# Simulasi Program Wokwi (Tugas 3)
-
+### Simulasi Program Wokwi
 *Adaptasi sementara untuk pengujian akademis (Sesuai rubrik Shield PCB)*
-# <img src="Simulasi\Wokwi.png">
+<img src="Simulasi\Wokwi.png">
+
+<hr>
 
 # Cara Kerja Sistem
-
-1. **Inisialisasi & Pembacaan Data:** Saat dihidupkan, ATmega2560 menarik data waktu *real-time* (Jam, Menit, Detik) dari RTC DS3231 via I2C, serta mengukur pantulan frekuensi dari HC-SR04 untuk dikalkulasi menjadi persentase stok pakan (0-100%).
-2. **Sinkronisasi Tampilan & Cloud:** Data waktu dan stok ditampilkan ke layar LCD 16x2. Secara bersamaan, ATmega2560 merangkai string data dan mengirimkannya melalui komunikasi Serial (UART1) ke ESP32. ESP32 kemudian menembakkan data tersebut ke Web Dashboard via koneksi WiFi.
-3. **Logika Pemicu (Triggers):** Sistem terus bersiaga memeriksa 3 kondisi pemicu: 
-   - *Otomatis:* Apakah waktu saat ini sama persis dengan jadwal memori? (Dilengkapi *debouncing* agar tidak terjadi *log* ganda di detik yang sama).
-   - *Fisik:* Apakah tombol manual pada kandang ditekan?
-   - *Remote:* Apakah ada perintah eksekusi pakan masuk dari Web Dashboard melalui ESP32?
-4. **Eksekusi Aktuator Dinamis:** Jika salah satu pemicu aktif, ATmega2560 akan memancarkan sinyal *Fast PWM* (Hardware Timer) untuk membuka katup motor Servo MG90. Lama katup terbuka bergantung pada variabel **Durasi Pakan Dinamis** yang bisa diatur peternak langsung dari Web Dashboard (untuk mencegah pakan terbuang).
-5. **Perekaman Log (History):** Sebelum pakan turun, ATmega2560 secara mutlak mengirimkan paket data *Event* (`EVENT:AUTO`, `EVENT:PHYSICAL`, atau `EVENT:GUI`) ke Web Dashboard agar waktu dan alasan pakan keluar tercatat rapi di tabel *History*.
+<div align="justify">
+<ol>
+  <li><strong>Inisialisasi & Pembacaan Data:</strong> Saat dihidupkan, ATmega2560 menarik data waktu <em>real-time</em> (Jam, Menit, Detik) dari RTC DS3231 via I2C, serta mengukur pantulan frekuensi dari HC-SR04 untuk dikalkulasi menjadi persentase stok pakan (0-100%).</li>
+  <li><strong>Sinkronisasi Tampilan & Cloud:</strong> Data waktu dan stok ditampilkan ke layar LCD 16x2. Secara bersamaan, ATmega2560 merangkai string data dan mengirimkannya melalui komunikasi Serial (UART1) ke ESP32. ESP32 kemudian menembakkan data tersebut ke Web Dashboard via koneksi WiFi.</li>
+  <li><strong>Logika Pemicu (Triggers):</strong> Sistem terus bersiaga memeriksa 3 kondisi pemicu:
+    <ul>
+      <li><em>Otomatis:</em> Apakah waktu saat ini sama persis dengan jadwal memori? (Dilengkapi <em>debouncing</em> agar tidak terjadi <em>log</em> ganda di detik yang sama).</li>
+      <li><em>Fisik:</em> Apakah tombol manual pada kandang ditekan?</li>
+      <li><em>Remote:</em> Apakah ada perintah eksekusi pakan masuk dari Web Dashboard melalui ESP32?</li>
+    </ul>
+  </li>
+  <li><strong>Eksekusi Aktuator Dinamis:</strong> Jika salah satu pemicu aktif, ATmega2560 akan memancarkan sinyal <em>Fast PWM</em> (Hardware Timer) untuk membuka katup motor Servo MG90. Lama katup terbuka bergantung pada variabel <strong>Durasi Pakan Dinamis</strong> yang bisa diatur peternak langsung dari Web Dashboard (untuk mencegah pakan terbuang).</li>
+  <li><strong>Perekaman Log (History):</strong> Sebelum pakan turun, ATmega2560 secara mutlak mengirimkan paket data <em>Event</em> (<code>EVENT:AUTO</code>, <code>EVENT:PHYSICAL</code>, atau <code>EVENT:GUI</code>) ke Web Dashboard agar waktu dan alasan pakan keluar tercatat rapi di tabel <em>History</em>.</li>
+</ol>
+</div>
 
 # Panduan Penggunaan
-
-1. **Persiapan Daya:** Hubungkan alat ke sumber listrik PLN pada Power Supply 12V nya. Sistem manajemen daya internal (LM2596) akan menstabilkan tegangan operasi komponen ke 5V.
-2. **Koneksi Jaringan:** Pastikan alat menyala dalam jangkauan sinyal WiFi kandang agar ESP32 dapat secara otomatis merutekan sistem ATmega2560 ke *database* Cloud.
-3. **Akses Dashboard:** Buka *browser* di *smartphone* atau PC, lalu akses halaman Web Dashboard PakanPitik milik Anda. 
-4. **Pemantauan:** Pada layar Web (atau LCD lokal), Anda dapat melihat jam operasional alat saat ini dan persentase (%) ketersediaan pakan di dalam tangki hopper.
-5. **Pengaturan Jadwal & Durasi:** Pada panel kendali Web, atur 3 jadwal makan utama (Pagi, Siang, Sore) berformat HH:MM. Masukkan juga **Durasi Pakan** dalam milidetik (contoh: isi 3000 untuk buka katup selama 3 detik) untuk menyesuaikan takaran makanan unggas. Tekan "Kirim" atau "Set".
-6. **Eksekusi Darurat:** Jika ingin memberi pakan instan di luar jadwal, tekan tombol fisik pada alat, atau klik tombol **"Beri Makan Manual"** langsung dari Web Dashboard Anda. Log eksekusi akan langsung tercatat pada tabel riwayat *website*.
+<div align="justify">
+<ol>
+  <li><strong>Persiapan Daya:</strong> Hubungkan alat ke sumber listrik PLN pada Power Supply 12V nya. Sistem manajemen daya internal (LM2596) akan menstabilkan tegangan operasi komponen ke 5V.</li>
+  <li><strong>Koneksi Jaringan:</strong> Pastikan alat menyala dalam jangkauan sinyal WiFi kandang agar ESP32 dapat secara otomatis merutekan sistem ATmega2560 ke <em>database</em> Cloud.</li>
+  <li><strong>Akses Dashboard:</strong> Buka <em>browser</em> di <em>smartphone</em> atau PC, lalu akses halaman Web Dashboard PakanPitik milik Anda.</li>
+  <li><strong>Pemantauan:</strong> Pada layar Web (atau LCD lokal), Anda dapat melihat jam operasional alat saat ini dan persentase (%) ketersediaan pakan di dalam tangki hopper.</li>
+  <li><strong>Pengaturan Jadwal & Durasi:</strong> Pada panel kendali Web, atur 3 jadwal makan utama (Pagi, Siang, Sore) berformat HH:MM. Masukkan juga <strong>Durasi Pakan</strong> dalam milidetik (contoh: isi 3000 untuk buka katup selama 3 detik) untuk menyesuaikan takaran makanan unggas. Tekan "Kirim" atau "Set".</li>
+  <li><strong>Eksekusi Darurat:</strong> Jika ingin memberi pakan instan di luar jadwal, tekan tombol fisik pada alat, atau klik tombol <strong>"Beri Makan Manual"</strong> langsung dari Web Dashboard Anda. Log eksekusi akan langsung tercatat pada tabel riwayat <em>website</em>.</li>
+</ol>
+</div>
