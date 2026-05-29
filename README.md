@@ -93,7 +93,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 </p>
 
 ### UI/UX Web Dashboard
-<img src="UI-UX\Dashboard Web.png">
+<img src="UI-UX\Desain UI-UX figma 2.png" height="600">
 
 ### Simulasi Program Wokwi
 *Adaptasi sementara untuk pengujian akademis (Sesuai rubrik Shield PCB)*
