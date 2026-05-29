@@ -1,5 +1,5 @@
 /*
- * ManganPitik v8.2 - Wokwi to PCB Shield Adaptation (Ide 3)
+ * ManganPitik v8.2.2 - Wokwi to PCB Shield Adaptation (Dynamic Duration & Anti-Double Log)
  * Architecture: Pure AVR Bare-Metal C++ (ATmega2560)
  * Hardware Connections (Sesuai Shield PCB):
  * - USART0: TCP Bridge Wokwi / USB Laptop (Python HMI Logger)
@@ -14,6 +14,7 @@
 #include <avr/interrupt.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>  // Ditambahkan untuk fungsi atoi()
 
 // --- DEFINISI DRIVER LCD I2C (PCF8574) ---
 #define LCD_ADDR         0x4E  // (0x27 << 1) Alamat TWI Tulis PCF8574
@@ -35,9 +36,16 @@ typedef struct {
 } WaktuSistem;
 
 volatile uint8_t flag_beri_makan = 0;
+
+// --- TAMBAHAN BARU: Variabel Pencegah Double Log (Debouncing Waktu) ---
+uint8_t menit_terakhir_eksekusi = 60; // Set ke 60 (tidak valid) sebagai nilai awal
+
 // Jadwal Default: 07:00, 12:00, 16:30
 uint8_t jadwal_jam[3] = {7, 12, 16};
 uint8_t jadwal_menit[3] = {0, 0, 30};
+
+// --- VARIABEL DURASI PAKAN (dalam milidetik) ---
+uint16_t durasi_pakan_ms = 5000; // Default: LED menyala 5000 ms (5 detik)
 
 // =========================================================================
 // 1. DRIVER UNIVERSAL ASYNCHRONOUS RECEIVER TRANSMITTER (USART0)
@@ -230,7 +238,7 @@ void simulasi_eksekusi_pakan(uint16_t durasi_ms) {
     // 2. Beri nilai Duty Cycle maksimal (Terang penuh)
     OCR0A = 255; 
     
-    // 3. Delay pakan jatuh
+    // 3. Delay pakan jatuh berdasarkan durasi_ms yang diset
     for (uint16_t i = 0; i < durasi_ms / 10; i++) {
         _delay_ms(10);
     }
@@ -263,7 +271,7 @@ int main(void) {
     char lcd_line1[17];
     char lcd_line2[17];
     
-    usart0_print("[MANGANPITIK v8.2] Mode Shield PCB: Potentio (PF0) & LED (PB7) Active.\n");
+    usart0_print("[MANGANPITIK v8.2.2] Mode Shield PCB: Potentio (PF0) & LED (PB7) Active.\n");
     
     uint8_t sumber_pakan = 0; // 1: Jadwal, 2: Tombol Fisik, 3: Perintah GUI
 
@@ -286,12 +294,23 @@ int main(void) {
         lcd_set_cursor(0, 1);
         lcd_print(lcd_line2);
         
-        // 4. Logika Pemicu Jadwal Otomatis
+        // 4. Manajemen Logika Pemicu Jadwal Waktu Makan Otomatis
         for(uint8_t i = 0; i < 3; i++) {
-            if (rtc_time.jam == jadwal_jam[i] && rtc_time.menit == jadwal_menit[i] && rtc_time.detik == 0) {
+            // Cek apakah waktunya pas, DAN apakah kita belum mengeksekusinya di menit ini
+            if (rtc_time.jam == jadwal_jam[i] && 
+                rtc_time.menit == jadwal_menit[i] && 
+                rtc_time.detik == 0 && 
+                rtc_time.menit != menit_terakhir_eksekusi) {
+                
                 flag_beri_makan = 1;
                 sumber_pakan = 1;
+                menit_terakhir_eksekusi = rtc_time.menit; // Kunci agar tidak terpanggil lagi di menit yang sama
             }
+        }
+        
+        // Reset pengunci jika detik sudah lewat dari zona rawan (misal lebih dari 5 detik)
+        if (rtc_time.detik > 5) {
+             menit_terakhir_eksekusi = 60; 
         }
         
         // 5. Logika Pemicu Tombol Fisik (PH4)
@@ -320,6 +339,22 @@ int main(void) {
                     usart0_print("[SYSTEM] 3 Jadwal diperbarui.\n");
                 }
             }
+            // --- LOGIKA DURASI DINAMIS ---
+            else if (strncmp((const char*)rx_buffer, "#DUR:", 5) == 0) {
+                int durasi_baru = atoi((const char*)rx_buffer + 5);
+                
+                // Proteksi batas minimal (meskipun ini LED, kita pertahankan logika konsisten dengan Servo)
+                if (durasi_baru < 500) {
+                    durasi_baru = 500;
+                }
+                
+                durasi_pakan_ms = (uint16_t)durasi_baru; 
+                
+                char info_durasi[64];
+                sprintf(info_durasi, "[SYSTEM] Durasi LED (Pakan) berhasil diset ke: %u ms.\n", durasi_pakan_ms);
+                usart0_print(info_durasi);
+            }
+            
             rx_index = 0;
             cmd_ready = 0;
         }
@@ -333,8 +368,8 @@ int main(void) {
             lcd_set_cursor(0, 1);
             lcd_print("STATUS: FEEDING ");
             
-            // Nyalakan LED PB7 selama 5 detik sebagai indikator pemberian pakan
-            simulasi_eksekusi_pakan(5000); 
+            // Nyalakan LED PB7 selama durasi yang ditentukan
+            simulasi_eksekusi_pakan(durasi_pakan_ms); 
             
             flag_beri_makan = 0;   
             sumber_pakan = 0;
