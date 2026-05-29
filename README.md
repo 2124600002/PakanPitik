@@ -71,8 +71,12 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 # Visualisasi Sistem
 
-### Hardware Terpasang
-<img src="Hardware\Gambar Hardware.png">
+### Desain Hardware 
+<img src="Hardware\3D PCB.jpeg" height="400">
+
+<img src="Hardware\Desain PCB.jpeg" height="600">
+
+<img src="Hardware\Skematik PCB.jpeg" height="600">
 
 ### Desain 3D
 <img src="3D\Gambar 3D.png">
