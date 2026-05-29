@@ -63,8 +63,9 @@ Merancang dan mengimplementasikan sistem pemberian pakan ayam otomatis berbasis 
 
 # Flowchart
 
-# <img src="Flowchart\Flowchart baru.png" width="50%">
+# <img src="Flowchart\Flowchart baru 1.png" width="100%">
 
+# <img src="Flowchart\Flowchart baru 2.png" width="100%">
 
 # UI/UX
 
