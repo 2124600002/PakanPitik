@@ -1,5 +1,5 @@
 /*
- * ManganPitik v8.1 - Master Controller Firmware (SSOT Enabled)
+ * ManganPitik v8.1.1 - Master Controller Firmware (SSOT & Dynamic Duration)
  * Architecture: Pure AVR Bare-Metal C++ (ATmega2560)
  * Hardware Connections:
  * - USART0: TCP Bridge Wokwi / USB Laptop (Python HMI Logger)
@@ -14,6 +14,7 @@
 #include <avr/interrupt.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h> 
 
 // --- DEFINISI OPERASI SERVO (TIMER 1) ---
 #define SERVO_TUTUP 2000  // Duty cycle ~1ms (Katup Tertutup Rapat)
@@ -39,9 +40,13 @@ typedef struct {
 } WaktuSistem;
 
 volatile uint8_t flag_beri_makan = 0;
+
 // Jadwal Default: 07:00, 12:00, 16:30
 uint8_t jadwal_jam[3] = {7, 12, 16};
 uint8_t jadwal_menit[3] = {0, 0, 30};
+
+// --- TAMBAHAN BARU: Variabel Durasi Pakan (dalam milidetik) ---
+uint16_t durasi_pakan_ms = 5000; // Default: Buka selama 5000 ms (5 detik)
 
 // =========================================================================
 // 1. DRIVER UNIVERSAL ASYNCHRONOUS RECEIVER TRANSMITTER (USART0)
@@ -251,7 +256,7 @@ uint8_t ambil_level_pakan(void) {
     uint32_t ticks = TCNT3;
     uint32_t jarak_cm = (ticks * 0.5) * 0.0343 / 2; // Formula konversi jarak fisika suara
     
-    // Pemetaan linear persentase wadah pakan (Tinggi Wadah Maksimal = 25 cm sesuai modul)
+    // Pemetaan linear persentase wadah pakan (Tinggi Wadah Maksimal = 25 cm, amplitudo set ke 25)
     if (jarak_cm > 25) jarak_cm = 25; 
     uint8_t persentase_stok = ((25 - jarak_cm) * 100) / 25;
     
@@ -280,7 +285,7 @@ int main(void) {
     char lcd_line1[17];
     char lcd_line2[17];
     
-    usart0_print("[MANGANPITIK v8.1] Bare-Metal ATmega2560 Active.\n");
+    usart0_print("[MANGANPITIK v8.1.1] Bare-Metal ATmega2560 Active. Dynamic Duration Enabled.\n");
     
     uint8_t sumber_pakan = 0; // 1: Jadwal, 2: Tombol Fisik, 3: Perintah GUI
 
@@ -337,6 +342,24 @@ int main(void) {
                     usart0_print("[SYSTEM] 3 Jadwal makan baru diperbarui via GUI Laptop.\n");
                 }
             }
+            // --- LOGIKA DURASI YANG BARU DIPERBAIKI ---
+            else if (strncmp((const char*)rx_buffer, "#DUR:", 5) == 0) {
+                // Ambil teks angka setelah 5 karakter pertama ("#DUR:") lalu ubah ke Integer
+                int durasi_baru = atoi((const char*)rx_buffer + 5);
+                
+                // PROTEKSI FISIKA MEKANIK: Servo butuh minimal 500ms (0.5 detik) untuk bisa berputar
+                if (durasi_baru < 500) {
+                    durasi_baru = 500;
+                }
+                
+                durasi_pakan_ms = (uint16_t)durasi_baru; // Update variabel durasi
+                
+                // Kirim balik konfirmasi ke Python
+                char info_durasi[64];
+                sprintf(info_durasi, "[SYSTEM] Durasi pakan berhasil diset ke: %u ms.\n", durasi_pakan_ms);
+                usart0_print(info_durasi);
+            }
+            
             rx_index = 0;
             cmd_ready = 0;
         }
@@ -350,7 +373,9 @@ int main(void) {
 
             lcd_set_cursor(0, 1);
             lcd_print("STATUS: FEEDING ");
-            eksekusi_pakan(5000); // Buka katup dispenser selama 5 detik penuh
+            
+            // --- PERUBAHAN: Gunakan variabel durasi, bukan angka statis ---
+            eksekusi_pakan(durasi_pakan_ms); 
             
             // Reset state
             flag_beri_makan = 0;   

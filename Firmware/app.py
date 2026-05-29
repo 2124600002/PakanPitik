@@ -13,7 +13,8 @@ class ManganPitikHMI:
     def __init__(self, root):
         self.root = root
         self.root.title("PanganPitik")
-        self.root.geometry("600x650") # Diperbesar untuk menampung tabel history
+        # --- PERUBAHAN: Lebar di-resize sedikit agar input muat ---
+        self.root.geometry("650x650") 
         self.root.configure(padx=15, pady=15)
         
         self.sock = None
@@ -49,8 +50,8 @@ class ManganPitikHMI:
         self.lbl_stok_percent = ttk.Label(status_frame, text="-- %", font=("Arial", 12, "bold"))
         self.lbl_stok_percent.pack(anchor="w")
 
-        # Kanan: Multi-Schedule
-        jadwal_frame = ttk.LabelFrame(top_frame, text=" Pengaturan Jadwal ", padding=(10, 10))
+        # Kanan: Multi-Schedule & DURATION
+        jadwal_frame = ttk.LabelFrame(top_frame, text=" Pengaturan Jadwal & Durasi ", padding=(10, 10))
         jadwal_frame.pack(side="right", fill="both", expand=True, padx=(5, 0))
 
         ttk.Label(jadwal_frame, text="Pagi :").grid(row=0, column=0, sticky="w", pady=2)
@@ -66,7 +67,17 @@ class ManganPitikHMI:
         self.ent_sore.grid(row=2, column=1, padx=5); self.ent_sore.insert(0, "16:30")
 
         btn_set = ttk.Button(jadwal_frame, text="Kirim Jadwal", command=self.send_set_jadwal)
-        btn_set.grid(row=3, column=0, columnspan=2, pady=10, sticky="we")
+        btn_set.grid(row=3, column=0, columnspan=2, pady=5, sticky="we")
+
+        # --- TAMBAHAN BARU: UI Pengaturan Durasi ---
+        ttk.Separator(jadwal_frame, orient="horizontal").grid(row=4, column=0, columnspan=2, sticky="we", pady=5)
+        
+        ttk.Label(jadwal_frame, text="Durasi Pakan (ms):").grid(row=5, column=0, sticky="w", pady=2)
+        self.ent_durasi = ttk.Entry(jadwal_frame, width=8)
+        self.ent_durasi.grid(row=5, column=1, padx=5); self.ent_durasi.insert(0, "5000") # Default 5 detik
+        
+        btn_dur = ttk.Button(jadwal_frame, text="Kirim Durasi", command=self.send_set_durasi)
+        btn_dur.grid(row=6, column=0, columnspan=2, pady=5, sticky="we")
 
         # --- TOMBOL MANUAL FEED ---
         btn_feed = ttk.Button(self.root, text="⚡ EKSEKUSI PAKAN MANUAL", command=self.send_manual_feed)
@@ -160,8 +171,6 @@ class ManganPitikHMI:
             try:
                 self.sock.sendall(b'#FEED\n')
                 print("Command terkirim via TCP: #FEED")
-                # CATATAN: self.log_history dihapus dari sini. 
-                # Python akan menunggu balikan "EVENT:GUI" dari ATmega2560 terlebih dahulu!
             except Exception as e:
                 print("Gagal mengirim perintah:", e)
 
@@ -182,6 +191,21 @@ class ManganPitikHMI:
                     print("Gagal mengirim jadwal")
             else:
                 print("Format salah! Pastikan ketiganya berformat HH:MM")
+
+    # --- TAMBAHAN BARU: Fungsi Mengirim Durasi ---
+    def send_set_durasi(self):
+        if self.sock:
+            # Ambil inputan angka
+            dur_str = self.ent_durasi.get().strip()
+            if dur_str.isdigit(): # Pastikan isinya hanya angka
+                command = f"#DUR:{dur_str}\n"
+                try:
+                    self.sock.sendall(command.encode('utf-8'))
+                    print(f"Durasi pakan baru dikirim: {dur_str} ms")
+                except Exception as e:
+                    print("Gagal mengirim durasi")
+            else:
+                print("Format salah! Masukkan angka dalam milidetik (misal: 3000)")
 
     def on_closing(self):
         self.is_running = False
