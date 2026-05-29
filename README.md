@@ -1,4 +1,4 @@
-# <img src="">
+# <img src="Assets\Logo\Logo PakanPitik.png">
 # Smart Chicken Feeder (SCF)
 
 # Deskripsi Proyek: Smart Pakan Ayam
