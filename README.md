@@ -41,7 +41,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 <hr>
 
-# Anggota Tim
+# Anggota Kelompok 1
 
 <img src="Assets\Banner kelompok.png">
 
@@ -79,12 +79,12 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <img src="Hardware\Skematik PCB.jpeg" height="600">
 
 ### Desain 3D
-<img src="3D\Gambar 3D.png">
+<img src="3D\PakanPitik 3D.bmp" height="600">
 
 ### Blok Diagram
 <img src="Blokdiagram\Blockdiagram baru.png">
 
-### Flowchart Logika
+### Flowchart
 
 <p align="center">
   <img src="Flowchart\Flowchart baru 1.png" height="600">
