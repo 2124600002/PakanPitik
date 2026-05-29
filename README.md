@@ -29,7 +29,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan ayam otomatis berbasis 
 
 # Anggota Tim
 
-# <img src="Assets\Cover kelompok.png">
+# <img src="Assets\cover kelompok.png">
 
 |      NRP      |        Nama        |        Jobdesk          |
 | :-----------: |:----------------:  | :-------------------:   |
@@ -59,7 +59,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan ayam otomatis berbasis 
 
 # Blok Diagram
 
-# <img src="Blokdiagram\Bl0ockdiagram baru.png">
+# <img src="Blokdiagram\Blockdiagram baru.png">
 
 # Flowchart
 
