@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PakanPitik Control Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header-title">
+        <span>PAKANPITIK CONTROL CENTER</span>
+    </div>
+
+    <div class="top-panels">
+        <div class="card">
+            <div class="card-header">
+                Live Status
+                <span class="badge badge-green">● CONNECTED</span>
+            </div>
+            <p>Status: Terhubung ke Server</p>
+            <div class="mt-10">
+                <div style="margin-bottom: 5px;">Level Tangki Pakan:</div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="stokBar"></div>
+                </div>
+                <span style="font-weight: bold;" id="stokText">45 %</span>
+            </div>
+
+            <div class="status-boxes">
+                <div class="status-box">
+                    <div class="status-box-title">MODE</div>
+                    <div class="status-box-value">AUTO</div>
+                </div>
+                <div class="status-box">
+                    <div class="status-box-title">DEVICE</div>
+                    <div class="status-box-value">OK</div>
+                </div>
+                <div class="status-box">
+                    <div class="status-box-title">LAST FEED</div>
+                    <div class="status-box-value" id="lastFeedText">--:--</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Pengaturan Jadwal
+                <span class="badge badge-yellow">SCHEDULE</span>
+            </div>
+            
+            <div class="flex-between">
+                <div class="schedule-wrapper">
+                    <div class="schedule-inputs">
+                        <div class="input-row">
+                            <label>Pagi :</label>
+                            <input type="time" id="jadwalPagi" value="07:00">
+                        </div>
+                        <div class="input-row">
+                            <label>Siang :</label>
+                            <input type="time" id="jadwalSiang" value="12:00">
+                        </div>
+                        <div class="input-row">
+                            <label>Sore :</label>
+                            <input type="time" id="jadwalSore" value="16:30">
+                        </div>
+                    </div>
+                    <button class="btn-kirim-jadwal" onclick="kirimJadwal()">Kirim<br>Jadwal</button>
+                </div>
+
+                <div style="text-align: center; border-left: 1px solid var(--border-color); padding-left: 20px;">
+                    <label style="display: block; margin-bottom: 8px;">Durasi Pakan (ms) :</label>
+                    <input type="number" id="durasiPakan" value="5000" style="width: 80px; text-align: center; margin-bottom: 10px;">
+                    <button onclick="kirimDurasi()" style="display: block; width: 100%;">Kirim Durasi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn-large" onclick="eksekusiManual()">
+        <span>⚡ EKSEKUSI PAKAN MANUAL</span>
+        <span style="font-size: 12px; color: var(--text-muted);">READY</span>
+    </button>
+
+    <div class="card" style="padding-bottom: 0; overflow: hidden;">
+        <div class="card-header" style="margin-bottom: 0; border-bottom: none; padding-bottom: 20px;">
+            History Pemberian Pakan
+            <span class="badge" style="background-color: #dcd7cc; border: 1px solid #c4bea8;" id="totalDataText">Total data: 0</span>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Waktu Eksekusi</th>
+                        <th>Metode</th>
+                        <th>Status Tangki</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTableBody">
+                    <tr>
+                        <td>2026-05-29 07:00:00</td>
+                        <td>Otomatis (Jadwal)</td>
+                        <td>50 %</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

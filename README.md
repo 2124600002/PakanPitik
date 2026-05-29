@@ -43,7 +43,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 # Anggota Tim
 
-<img src="Assets\cover kelompok.png">
+<img src="Assets\Banner kelompok.png">
 
 |      NRP      |        Nama        |        Jobdesk          |
 | :-----------: |:----------------:  | :-------------------:   |
@@ -81,7 +81,6 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <img src="Blokdiagram\Blockdiagram baru.png">
 
 ### Flowchart Logika
-*Menampilkan alur logika Single Source of Truth (SSOT) dan manajemen pemicu sistem.*
 
 <p align="center">
   <img src="Flowchart\Flowchart baru 1.png" height="600">
