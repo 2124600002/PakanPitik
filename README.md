@@ -85,7 +85,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 <img src="3D Design\PakanPitik 3D 3.bmp" height="600">
 
-<img src="3D Design\PakanPitik 3D 4.bmp" height="600">
+<img src="3D Design\PakanPitik 3D 7.bmp" height="600">
 
 <img src="3D Design\PakanPitik 3D 5.bmp" height="600">
 
