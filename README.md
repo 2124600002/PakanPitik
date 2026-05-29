@@ -79,7 +79,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <img src="Hardware\Skematik PCB.jpeg" height="600">
 
 ### Desain 3D
-<img src="3D\PakanPitik 3D.bmp" height="600">
+<img src="3D Design\PakanPitik 3D.bmp" height="600">
 
 ### Blok Diagram
 <img src="Blokdiagram\Blockdiagram baru.png">
