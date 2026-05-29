@@ -1,4 +1,4 @@
-# <img src="Assets\Logo\Logo PakanPitik.png">
+# <img src="Assets\Logo PakanPitik.png">
 # Pakan Pitik
 
 # Deskripsi Proyek
@@ -29,7 +29,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan ayam otomatis berbasis 
 
 # Anggota Tim
 
-# <img src="Assets\cover kelompok.png">
+# <img src="Assets\Cover kelompok.png">
 
 |      NRP      |        Nama        |        Jobdesk          |
 | :-----------: |:----------------:  | :-------------------:   |
@@ -59,16 +59,16 @@ Merancang dan mengimplementasikan sistem pemberian pakan ayam otomatis berbasis 
 
 # Blok Diagram
 
-# <img src="Blokdiagram\blockdiagram_nyata.png">
+# <img src="Blokdiagram\Bl0ockdiagram baru.png">
 
 # Flowchart
 
-# <img src="Flowchart\flowchart nyata.png" width="50%">
+# <img src="Flowchart\Flowchart baru.png" width="50%">
 
 
 # UI/UX
 
-# <img src="gambarUI">
+# <img src="">
 
 ### Website Monitoring
 
