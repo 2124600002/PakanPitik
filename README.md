@@ -166,6 +166,11 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 ### UI-UX Web Dashboard
 <div align="center">
+  <br>
+  <a href="https://www.figma.com/design/T8wNbSInKxWhA6DcHFIXEK/Untitled?node-id=0-1&t=T81r4mzvqB2A10Lv-1" target="_blank">
+    <img src="https://img.shields.io/badge/▶_Design_UI-UX_di_Figma-1199EE?style=for-the-badge" alt="Buka Figma">
+  </a>
+  <br><br>
   <img src="UI-UX\Tampilan UI-UX.png" width="800">
   <p align="justify">
     Tampilan UI/UX Web Dashboard yang dirancang menggunakan Figma untuk memantau alat PakanPitik via WiFi di berbagai perangkat. Panel "Live Status" menampilkan persentase sisa pakan di penampung (berdasarkan pembacaan sensor Ultrasonik HC-SR04) dan waktu pemberian pakan terakhir. Di sebelah kanan, terdapat form untuk mengatur jadwal pakan otomatis (Pagi, Siang, Sore) beserta input durasi bukaan servo (dalam milidetik). Di bagian tengah, tersedia tombol interaktif untuk mengeksekusi pemberian pakan secara manual. Bagian paling bawah menampilkan tabel log history yang mencatat detail setiap aktivitas operasional alat secara real-time.
