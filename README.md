@@ -44,7 +44,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 # Anggota Kelompok 1
 
 <div align="center">
-  <img src="Assets\Banner kelompok.png" width="400">
+  <img src="Assets\Banner kelompok.png" width="600">
 </div>
 <br>
 
@@ -80,19 +80,19 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 ### Desain Hardware 
 <div align="center">
-  <img src="Hardware\3D PCB.jpeg" width="400">
+  <img src="Hardware\3D PCB.jpeg" width="600">
   <p align="justify">
     <em>Tampilan 3D dari board slave untuk sistem PakanPitik.</em>
   </p>
   <br>
   
-  <img src="Hardware\Desain PCB.jpeg" width="400">
+  <img src="Hardware\Desain PCB.jpeg" width="600">
   <p align="justify">
     <em>Wiring pada board PCB slave dengan menggunakan bottom layer saja untuk menghemat dan mempermudah dalam proses pencetakkan.</em>
   </p>
   <br>
 
-  <img src="Hardware\Skematik PCB.jpeg" width="400">
+  <img src="Hardware\Skematik PCB.jpeg" width="600">
   <p align="justify">
     <em>Desain skematik dari board PCB slave yang digunakan pada PakanPitik.</em>
   </p>
@@ -100,34 +100,34 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 ### Desain 3D
 <div align="center">
-  <img src="3D Design\PakanPitik 3D.bmp" width="400">
+  <img src="3D Design\PakanPitik 3D.bmp" width="600">
   <br><br>
-  <img src="3D Design\PakanPitik 3D 2.bmp" width="400">
+  <img src="3D Design\PakanPitik 3D 2.bmp" width="600">
   <br><br>
-  <img src="3D Design\PakanPitik 3D 3.bmp" width="400">
+  <img src="3D Design\PakanPitik 3D 3.bmp" width="600">
   <br><br>
-  <img src="3D Design\PakanPitik 3D 7.bmp" width="400">
+  <img src="3D Design\PakanPitik 3D 7.bmp" width="600">
   <br><br>
-  <img src="3D Design\PakanPitik 3D 5.bmp" width="400">
+  <img src="3D Design\PakanPitik 3D 5.bmp" width="600">
   <br><br>
-  <img src="3D Design\PakanPitik 3D 6.bmp" width="400">
+  <img src="3D Design\PakanPitik 3D 6.bmp" width="600">
 </div>
 
 ### Blok Diagram
 <div align="center">
-  <img src="Blokdiagram\Blockdiagram baru.png" width="400">
+  <img src="Blokdiagram\Blockdiagram baru.png" width="600">
 </div>
 
 ### Flowchart
 <div align="center">
-  <img src="Flowchart\Flowchart baru 1.png" width="400">
+  <img src="Flowchart\Flowchart baru 1.png" width="600">
   <br><br>
-  <img src="Flowchart\Flowchart baru 2.png" width="400">
+  <img src="Flowchart\Flowchart baru 2.png" width="600">
 </div>
 
 ### UI/UX Web Dashboard
 <div align="center">
-  <img src="UI-UX\Desain UI-UX figma 2.png" width="400">
+  <img src="UI-UX\Desain UI-UX figma 2.png" width="600">
 </div>
 
 ### Simulasi Program Wokwi
@@ -141,7 +141,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     <img src="https://img.shields.io/badge/▶_Coba_Simulasi_di_Wokwi-1199EE?style=for-the-badge" alt="Buka Wokwi">
   </a>
   <br><br>
-  <img src="Simulasi\Wokwi.png" width="400">
+  <img src="Simulasi\Wokwi.png" width="600">
 </div>
 
 <hr>
