@@ -181,7 +181,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <br>
   <a href="https://wokwi.com/projects/465155487486760961" target="_blank">
-    <img src="https://img.shields.io/badge/Wokwi-Simulation-1199EE?style=for-the-badge&logo=arduino&logoColor=white" alt="Buka Wokwi">
+    <img src="https://img.shields.io/badge/Wokwi_Simulation-5A67D8?style=for-the-badge&logo=arduino&logoColor=white" alt="Buka Wokwi">
   </a>
   <br><br>
   <img src="Simulasi\Wokwi.png" width="800">
