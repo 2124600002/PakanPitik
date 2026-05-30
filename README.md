@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="Assets\Logo PakanPitik.png" width="250">
+  <img src="Assets\Banner promosi\Banner promosi 1.png" width="800">
   <h1>PakanPitik</h1>
   <p><em>"Inovasi cerdas untuk meringankan beban peternak ayam lokal dan mewujudkan kemandirian pangan"</em></p>
 </div>
@@ -55,7 +55,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 | 2124600007    | Muh Yusni Muzaky F.| Hardware                |
 | 2124600012    | Ferris Adiwidya H. | Software & Documentation|
 | 2124600016    | Reyhan Fachri A.H. | Software & Documentation|
-| 2124600020    | M. Gustav Ardhito  | Hardware                |
+| 2124600020    | M Gustav Ardhito   | Hardware                |
 
 # Komponen Hardware
 
@@ -181,7 +181,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
   <br><br>
   <img src="Simulasi\Wokwi.png" width="800">
   <p align="justify">
-    Tangkapan layar di atas menunjukkan pengujian simulasi logika sistem PakanPitik yang sementara ini disesuaikan dengan komponen input/output yang tersedia pada Shield PCB akademis.
+    Tangkapan layar di atas menunjukkan pengujian simulasi logika sistem PakanPitik yang sementara ini disesuaikan dengan komponen input/output yang tersedia pada Shield PCB ATmega2560.
   </p>
 </div>
 
