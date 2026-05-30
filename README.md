@@ -55,7 +55,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 | 2124600007    | Muh Yusni Muzaky F.| Hardware                |
 | 2124600012    | Ferris Adiwidya H. | Software & Documentation|
 | 2124600016    | Reyhan Fachri A.H. | Software & Documentation|
-| 2124600020    | M Gustav Ardhito   | Hardware                |
+| 2124600020    | M. Gustav Ardhito  | Hardware                |
 
 # Komponen Hardware
 
@@ -82,19 +82,19 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="Hardware\3D PCB.jpeg" width="800">
   <p align="justify">
-    <em>Tampilan 3D dari board PCB slave untuk sistem PakanPitik.</em>
+    Tampilan 3D dari board PCB slave untuk sistem PakanPitik.
   </p>
   <br>
   
   <img src="Hardware\Desain PCB.jpeg" width="800">
   <p align="justify">
-    <em>Wiring pada board PCB slave dengan menggunakan bottom layer saja untuk menghemat biaya dan mempermudah dalam proses pencetakkan.</em>
+    Wiring pada board PCB slave dengan menggunakan bottom layer saja untuk menghemat biaya dan mempermudah dalam proses pencetakan.
   </p>
   <br>
 
   <img src="Hardware\Skematik PCB.jpeg" width="800">
   <p align="justify">
-    <em>Desain skematik dari board PCB slave yang digunakan pada PakanPitik, dimana dari board PCB slave ini nantinya akan banyak dihubungkan menggunakan connector JST menggunakan kabel menuju board shield ATmega2560.</em>
+    Desain skematik dari board PCB slave yang digunakan pada PakanPitik, dimana dari board PCB slave ini nantinya akan banyak dihubungkan menggunakan konektor JST melalui kabel menuju board shield ATmega2560.
   </p>
 </div>
 
@@ -102,43 +102,43 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="3D Design\PakanPitik 3D.bmp" width="800">
   <p align="justify">
-    <em>Tampak dari Design 3D dari PakanPitik yang didesain menggunakan Inventor, dimana dapat kita lihat disana terdapat Penampung makanan unggas, servo sebagai aktuator untuk membuka dan menutup makanan yang keluar dari penampung melalui corong, kemudian terdapat bracket penghubung antara alat pemberi pakan dan box IoT, dimana bracket ini dapat diggunakan untuk menggantungkan alat pada sebuah triplek atau papan dengan tebal 2cm. Terdapat juga box IoT yang mana pada bagian depan terdapat LCD 16x2 I2C dan disampingnya terdapat Tombol pakan manual berwarna hijau, serta dibagian bawahnya terdapat input untuk power supply 12V 5A. Selain itu terdapat piring atau wadah makan pada bagian bawah dari penampung nantinya sebagai tempat keluarnya pakan.</em>
+    Tampak desain 3D dari PakanPitik yang dirancang menggunakan perangkat lunak Inventor. Pada desain tersebut, dapat dilihat penampung makanan unggas, servo sebagai aktuator untuk membuka dan menutup saluran pakan melalui corong, serta bracket penghubung antara alat pemberi pakan dan box IoT. Bracket ini dapat digunakan untuk menggantungkan alat pada triplek atau papan dengan ketebalan 2cm. Terdapat juga box IoT yang pada bagian depannya dilengkapi LCD 16x2 I2C, tombol pakan manual berwarna hijau, serta port input untuk power supply 12V 5A di bagian bawah. Selain itu, piring atau wadah pakan ditempatkan di bagian bawah penampung sebagai area keluarnya pakan.
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 2.bmp" width="800">
   <p align="justify">
-    <em>Tampak dari isi bagian dalam Box IoT yang mana didalamnya terdapat shield dan board ATmega2560 sebagai master, serta board slave untuk komunikasi sensor dan aktuator serta ESP32 sebagai modul WiFi (dapat diganti menggunakan modul WiFi yang lebih murah, ESP32 dipakai karena itu yang kami punya). Terdapat juga LCD 16x2 Pada bagian tutup box serta Power Supply 12V 5A sebagai supply utama, dipilih Power Supply langsung dibanding menggunakan adaptor karena alat ini harus kuat jika dinyalakan selama 24 jam sehingga agar daya yang masuk stabil dipilihlah power supply.</em>
+    Tampak bagian dalam Box IoT yang memuat shield dan board ATmega2560 sebagai master, board slave untuk komunikasi sensor dan aktuator, serta ESP32 sebagai modul WiFi (modul WiFi ini dapat diganti dengan alternatif yang lebih terjangkau, namun ESP32 dipilih karena ketersediaan perangkat). LCD 16x2 terpasang pada penutup box, sedangkan Power Supply 12V 5A berfungsi sebagai sumber daya utama. Penggunaan Power Supply langsung dipilih alih-alih adaptor biasa agar sistem mampu beroperasi secara stabil dan tangguh selama 24 jam nonstop.
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 3.bmp" width="800">
   <p align="justify">
-    <em>Tampak depan dari alat PakanPitik saat box ditutup, terdapat LCD 16x2 sebagai display dai alat.</em>
+    Tampak depan dari alat PakanPitik saat box tertutup, dengan LCD 16x2 yang berfungsi sebagai layar informasi sistem.
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 4.bmp" width="800">
   <p align="justify">
-    <em>Tampak dari bagian corong pada bagian bawah penampung pakan, dengan penutup menggunakan servo MG90 agar daya tahan nya cukup kuat.</em>
+    Tampak bagian corong di dasar penampung pakan, dilengkapi dengan penutup yang digerakkan oleh servo MG90 untuk memastikan daya tahan yang cukup kuat.
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 7.bmp" width="800">
   <p align="justify">
-    <em>Penempatan sensor ultrasonic pada bagian penutup penampung pakan dipaling atas yang mengarah kebawah, fungsinya untuk mengukur level Pakan yang tersisa.</em>
+    Penempatan sensor ultrasonik pada penutup paling atas penampung pakan, menghadap ke bawah. Fungsinya adalah untuk mengukur level atau sisa pakan di dalam wadah secara real-time.
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 5.bmp" width="800">
   <p align="justify">
-    <em>Posisi servo membuka, saat jam diberi pakan otomatis atau saat tombol pakan ditekan servo akan membuka, dengan lama bukanya dapat diatur pada GUI.</em>
+    Posisi servo saat terbuka. Ketika jadwal pakan otomatis tiba atau tombol pakan manual ditekan, servo akan membuka katup. Durasi bukaan ini dapat diatur langsung melalui antarmuka GUI (Web Dashboard).
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 6.bmp" width="800">
   <p align="justify">
-    <em>Posisi servo menutup, saat tidak ada aktivitas ataupun belum saatnya untuk memberi pakan otomatis, servo akan menutup bagian bawah corong dari penampung pakan agar pakan tidak keluar serta tidak ada semut yang masuk.[Isi deskripsi di sini]</em>
+    Posisi servo saat tertutup. Saat sistem sedang tidak aktif atau belum mencapai waktu pemberian pakan otomatis, servo akan menutup rapat bagian bawah corong penampung untuk mencegah pakan keluar secara tidak sengaja dan menghindari masuknya semut atau hama lain ke dalam wadah.
   </p>
 </div>
 
@@ -146,7 +146,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="Blokdiagram\Blockdiagram baru.png" width="800">
   <p align="justify">
-    <em>Blockdiagram diatas merupakan alur koneksi dan komunikasi dari sistem alat PakanPitik nyata bukan yang sesuai shield ATmega2560.</em>
+    Blok diagram di atas merepresentasikan alur koneksi dan komunikasi dari perangkat keras PakanPitik yang sebenarnya (sistem nyata terimplementasi), bukan adaptasi sementara berbasis Shield ATmega2560.
   </p>
 </div>
 
@@ -154,13 +154,13 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="Flowchart\Flowchart baru 1.png" width="800">
   <p align="justify">
-    <em>Flowchart logika dari cara alat PakanPitik bekerja bagian pertama</em>
+    Flowchart logika yang menggambarkan alur kerja sistem PakanPitik (Bagian Pertama).
   </p>
   <br><br>
 
   <img src="Flowchart\Flowchart baru 2.png" width="800">
   <p align="justify">
-    <em>Flowchart logika dari cara alat PakanPitik bekerja bagian kedua</em>
+    Flowchart logika yang menggambarkan alur kerja sistem PakanPitik (Bagian Kedua).
   </p>
 </div>
 
@@ -168,7 +168,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="UI-UX\Tampilan UI-UX.png" width="800">
   <p align="justify">
-    <em>Tampilan UI-UX Web Daashboard untuk memantau alat PakanPitik via WiFi di berbagai device. Design dibuat menggunakan Figma. Pada bagian Live status terdapat sisa pakan pada penampung yang dibaca oleh sensor Ultasonic HC-SR04, serta beberapa status lain seperti jam pemberian pakan terakhir, lalu dikanannya terdapat bagian untuk setting jadwal pakan otomatis untuk pagi, siang sore. kemudian dikanannya terdapat juga lama dari servo membuka, dalam satuan milisecond. Pada bagian bawah terdapat tombol untuk memberi pakan secara manual, serta di bagian paling bawah terdapat log data history dari aktifitas seperti pemberian pakan manual atau otomatis pada jam berapa.</em>
+    Tampilan UI/UX Web Dashboard yang dirancang menggunakan Figma untuk memantau alat PakanPitik via WiFi di berbagai perangkat. Panel "Live Status" menampilkan persentase sisa pakan di penampung (berdasarkan pembacaan sensor Ultrasonik HC-SR04) dan waktu pemberian pakan terakhir. Di sebelah kanan, terdapat form untuk mengatur jadwal pakan otomatis (Pagi, Siang, Sore) beserta input durasi bukaan servo (dalam milidetik). Di bagian tengah, tersedia tombol interaktif untuk mengeksekusi pemberian pakan secara manual. Bagian paling bawah menampilkan tabel log history yang mencatat detail setiap aktivitas operasional alat secara real-time.
   </p>
 </div>
 
@@ -181,7 +181,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
   <br><br>
   <img src="Simulasi\Wokwi.png" width="800">
   <p align="justify">
-    <em>Diatas merupakan vidio untuk simulasi pada pengujian sistem PakanPitik yang disesuaikan dengan komponen pada Shield PCB.</em>
+    Tangkapan layar di atas menunjukkan pengujian simulasi logika sistem PakanPitik yang sementara ini disesuaikan dengan komponen input/output yang tersedia pada Shield PCB akademis.
   </p>
 </div>
 
