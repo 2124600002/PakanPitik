@@ -43,7 +43,10 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 # Anggota Kelompok 1
 
-<img src="Assets\Banner kelompok.png">
+<div align="center">
+  <img src="Assets\Banner kelompok.png" width="400">
+</div>
+<br>
 
 |      NRP      |        Nama        |        Jobdesk          |
 | :-----------: |:----------------:  | :-------------------:   |
@@ -56,64 +59,89 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 # Komponen Hardware
 
-1. Mikrokontroler ATmega2560 (Master Controller)
-2. Modul ESP32 WiFi (Bridge Controller)
-3. Modul Real-Time Clock (RTC) DS3231
-4. Sensor Jarak Ultrasonik HC-SR04
-5. Motor Servo DC MG90/MG996R
-6. Modul Display LCD 16x2 + I2C Backpack (PCF8574)
-7. Push Button (Tactile Switch)
-8. Modul Step-Down DC-DC LM2596 (12V ke 5V)
-9. Logic Level Converter Bi-Directional (Jembatan UART 5V ↔ 3.3V)
-10. Power Supply 12V DC
+<div align="justify">
+<ol>
+  <li>Mikrokontroler ATmega2560 (Master Controller)</li>
+  <li>Modul ESP32 WiFi (Bridge Controller)</li>
+  <li>Modul Real-Time Clock (RTC) DS3231</li>
+  <li>Sensor Jarak Ultrasonik HC-SR04</li>
+  <li>Motor Servo DC MG90/MG996R</li>
+  <li>Modul Display LCD 16x2 + I2C Backpack (PCF8574)</li>
+  <li>Push Button (Tactile Switch)</li>
+  <li>Modul Step-Down DC-DC LM2596 (12V ke 5V)</li>
+  <li>Logic Level Converter Bi-Directional (Jembatan UART 5V ↔ 3.3V)</li>
+  <li>Power Supply 12V DC</li>
+</ol>
+</div>
 
 <hr>
 
 # Visualisasi Sistem
 
 ### Desain Hardware 
-<img src="Hardware\3D PCB.jpeg" height="400">
+<div align="center">
+  <img src="Hardware\3D PCB.jpeg" width="400">
+  <p align="justify">
+    <em>Tampilan 3D dari board slave untuk sistem PakanPitik.</em>
+  </p>
+  <br>
+  
+  <img src="Hardware\Desain PCB.jpeg" width="400">
+  <p align="justify">
+    <em>Wiring pada board PCB slave dengan menggunakan bottom layer saja untuk menghemat dan mempermudah dalam proses pencetakkan.</em>
+  </p>
+  <br>
 
-<img src="Hardware\Desain PCB.jpeg" height="600">
-
-<img src="Hardware\Skematik PCB.jpeg" height="600">
+  <img src="Hardware\Skematik PCB.jpeg" width="400">
+  <p align="justify">
+    <em>Desain skematik dari board PCB slave yang digunakan pada PakanPitik.</em>
+  </p>
+</div>
 
 ### Desain 3D
-<img src="3D Design\PakanPitik 3D.bmp" height="600">
-
-<img src="3D Design\PakanPitik 3D 2.bmp" height="600">
-
-<img src="3D Design\PakanPitik 3D 3.bmp" height="600">
-
-<img src="3D Design\PakanPitik 3D 7.bmp" height="600">
-
-<img src="3D Design\PakanPitik 3D 5.bmp" height="600">
-
-<img src="3D Design\PakanPitik 3D 6.bmp" height="600">
+<div align="center">
+  <img src="3D Design\PakanPitik 3D.bmp" width="400">
+  <br><br>
+  <img src="3D Design\PakanPitik 3D 2.bmp" width="400">
+  <br><br>
+  <img src="3D Design\PakanPitik 3D 3.bmp" width="400">
+  <br><br>
+  <img src="3D Design\PakanPitik 3D 7.bmp" width="400">
+  <br><br>
+  <img src="3D Design\PakanPitik 3D 5.bmp" width="400">
+  <br><br>
+  <img src="3D Design\PakanPitik 3D 6.bmp" width="400">
+</div>
 
 ### Blok Diagram
-<img src="Blokdiagram\Blockdiagram baru.png">
+<div align="center">
+  <img src="Blokdiagram\Blockdiagram baru.png" width="400">
+</div>
 
 ### Flowchart
-
-<p align="center">
-  <img src="Flowchart\Flowchart baru 1.png" height="600">
-  &nbsp; &nbsp;
-  <img src="Flowchart\Flowchart baru 2.png" height="600">
-</p>
+<div align="center">
+  <img src="Flowchart\Flowchart baru 1.png" width="400">
+  <br><br>
+  <img src="Flowchart\Flowchart baru 2.png" width="400">
+</div>
 
 ### UI/UX Web Dashboard
-<img src="UI-UX\Desain UI-UX figma 2.png" height="600">
+<div align="center">
+  <img src="UI-UX\Desain UI-UX figma 2.png" width="400">
+</div>
 
 ### Simulasi Program Wokwi
-*Adaptasi simulasi untuk pengujian sistem PakanPitik yang diSesuaikan dengan komponen pada Shield PCB*
+<div align="justify">
+<em>Adaptasi simulasi untuk pengujian sistem PakanPitik yang disesuaikan dengan komponen pada Shield PCB.</em>
+</div>
 
 <div align="center">
+  <br>
   <a href="https://wokwi.com/projects/465155487486760961" target="_blank">
     <img src="https://img.shields.io/badge/▶_Coba_Simulasi_di_Wokwi-1199EE?style=for-the-badge" alt="Buka Wokwi">
   </a>
   <br><br>
-  <img src="Simulasi\Wokwi.png">
+  <img src="Simulasi\Wokwi.png" width="400">
 </div>
 
 <hr>
