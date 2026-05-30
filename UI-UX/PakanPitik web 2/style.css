@@ -209,3 +209,67 @@ tbody tr:hover { background-color: #e8e4db; }
 .flex-between { display: flex; justify-content: space-between; }
 .mt-10 { margin-top: 10px; }
 .mt-20 { margin-top: 20px; }
+
+/* =========================================================
+   RESPONSIVE DESIGN (Media Queries untuk HP & Tablet)
+   ========================================================= */
+
+/* Untuk Tablet (Lebar layar maksimal 900px) */
+@media screen and (max-width: 900px) {
+    .top-panels {
+        grid-template-columns: 1fr; /* Mengubah panel dari 2 kolom menjadi 1 kolom bertumpuk ke bawah */
+    }
+    
+    .schedule-grid, .flex-between {
+        flex-direction: column; /* Mengubah susunan isi card jadwal menjadi vertikal */
+        align-items: stretch;
+    }
+    
+    .schedule-wrapper {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    /* Mengatur ulang garis pembatas durasi pakan */
+    div[style*="border-left"] {
+        border-left: none !important;
+        border-top: 1px solid var(--border-color);
+        padding-left: 0 !important;
+        padding-top: 20px;
+    }
+}
+
+/* Untuk Smartphone (Lebar layar maksimal 600px) */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px; /* Mengurangi padding pinggir agar layar tidak sempit */
+    }
+    
+    .header-title {
+        font-size: 22px; /* Mengecilkan ukuran judul font */
+    }
+
+    .status-boxes {
+        flex-direction: column; /* Mengubah kotak status (MODE, DEVICE, LAST FEED) menjadi bertumpuk */
+        gap: 10px;
+    }
+
+    .schedule-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-kirim-jadwal {
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    /* Tabel scrollable pada layar kecil */
+    .table-container {
+        overflow-x: auto; /* Jika tabel terlalu lebar, akan muncul scroll horizontal */
+    }
+    
+    table {
+        min-width: 400px; /* Menjaga agar tabel tidak menyusut terlalu parah */
+    }
+}
