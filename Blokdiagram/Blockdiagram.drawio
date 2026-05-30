@@ -1,0 +1,110 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram name="IoT ManganPitik v8.1" id="0">
+    <mxGraphModel dx="1873" dy="1022" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SXvnqM1be7i4EwoctqRm-5" edge="1" parent="1" source="power" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#e51400;strokeColor=#B20000;" target="master">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SXvnqM1be7i4EwoctqRm-9" edge="1" parent="1" source="power" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#e51400;strokeColor=#B20000;" target="inputdomain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SXvnqM1be7i4EwoctqRm-10" edge="1" parent="1" source="power" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#e51400;strokeColor=#B20000;" target="outputdomain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="power" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6e6;strokeColor=#d63031;fontStyle=1;" value="" vertex="1">
+          <mxGeometry height="120" width="420" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ac" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="AC Main Source&#xa;220V AC" vertex="1">
+          <mxGeometry height="60" width="100" x="40" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="adapter" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="AC-DC PSU&lt;br&gt;12V DC" vertex="1">
+          <mxGeometry height="60" width="100" x="170" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="buck" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcccc;strokeColor=#c0392b;" value="LM2596 Buck Converter&#xa;12V → 5V" vertex="1">
+          <mxGeometry height="60" width="120" x="300" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="inputdomain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d6ecff;strokeColor=#0984e3;fontStyle=1;" value="DOMAIN INPUT" vertex="1">
+          <mxGeometry height="320" width="240" x="20" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="rtc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="RTC DS3231&#xa;Input Waktu" vertex="1">
+          <mxGeometry height="70" width="180" x="50" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="ultra" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="HC-SR04 Ultrasonic&#xa;Input Jarak" vertex="1">
+          <mxGeometry height="70" width="180" x="50" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="button" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Tombol Manual&#xa;Input Feed" vertex="1">
+          <mxGeometry height="70" width="180" x="50" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="master" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff4cc;strokeColor=#d4ac0d;fontStyle=1;" value="MASTER CONTROLLER" vertex="1">
+          <mxGeometry height="220" width="260" x="350" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="mcu" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2b3;strokeColor=#b7950b;fontStyle=1;" value="ATMEGA2560&#xa;Master Brain&#xa;Bare-Metal C++" vertex="1">
+          <mxGeometry height="100" width="160" x="400" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="outputdomain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=#27ae60;fontStyle=1;" value="" vertex="1">
+          <mxGeometry height="220" width="240" x="700" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="servo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Servo MG90&#xa;Output Feeding" vertex="1">
+          <mxGeometry height="70" width="180" x="730" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lcd" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="LCD 16x2 I2C&#xa;Log Status" vertex="1">
+          <mxGeometry height="70" width="180" x="730" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="iotdomain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5e6ff;strokeColor=#8e44ad;fontStyle=1;" value="" vertex="1">
+          <mxGeometry height="180" width="700" x="280" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="SXvnqM1be7i4EwoctqRm-14" edge="1" parent="1" source="logic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#76608a;strokeColor=#432D57;" target="esp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="logic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Logic Level Converter&#xa;5V ↔ 3.3V" vertex="1">
+          <mxGeometry height="70" width="180" x="340" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="SXvnqM1be7i4EwoctqRm-13" edge="1" parent="1" source="esp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#76608a;strokeColor=#432D57;" target="cloud">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="ESP32 WiFi Bridge&#xa;3.3V" vertex="1">
+          <mxGeometry height="70" width="180" x="590" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede7f6;strokeColor=#6c5ce7;" value="Cloud / Web Dashboard" vertex="1">
+          <mxGeometry height="70" width="120" x="830" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="ac" style="endArrow=block;html=1;fillColor=#e51400;strokeColor=light-dark(#B20000, #ff8788);" target="adapter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="adapter" style="endArrow=block;html=1;strokeColor=#d63031;" target="buck">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="rtc" style="endArrow=block;html=1;strokeColor=#0984e3;" target="mcu" value="I2C SDA/SCL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="ultra" style="endArrow=block;html=1;strokeColor=#0984e3;" target="mcu" value="Trig/Echo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="button" style="endArrow=block;html=1;strokeColor=#0984e3;" target="mcu" value="PH4 Active LOW">
+          <mxGeometry relative="1" x="-0.0048" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="mcu" style="endArrow=block;html=1;strokeColor=#27ae60;" target="servo" value="PWM PB5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="mcu" style="endArrow=block;html=1;strokeColor=#27ae60;" target="lcd" value="I2C SDA/SCL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="mcu" style="endArrow=block;html=1;strokeColor=#8e44ad;" target="logic" value="UART TX1/RX1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SXvnqM1be7i4EwoctqRm-12" edge="1" parent="1" source="power" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.999;entryY=0.612;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#e51400;strokeColor=#B20000;" target="iotdomain">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="80" />
+              <mxPoint x="1020" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

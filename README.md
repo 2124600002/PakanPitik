@@ -168,7 +168,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="UI-UX\Tampilan UI-UX.png" width="800">
   <p align="justify">
-    <em>Tampilan UI-UX Web Daashboar untuk memantau alat PakanPitik via WiFi di berbagai device. Design dibuat menggunakan Figma. Pada bagian Live status terdapat sisa pakan pada penampung yang dibaca oleh sensor Ultasonic HC-SR04, serta beberapa status lain seperti jam pemberian pakan terakhir, lalu dikanannya terdapat bagian untuk setting jadwal pakan otomatis untuk pagi, siang sore. kemudian dikanannya terdapat juga lama dari servo membuka, dalam satuan milisecond. Pada bagian bawah terdapat tombol untuk memberi pakan secara manual, serta di bagian paling bawah terdapat log data history dari aktifitas seperti pemberian pakan manual atau otomatis pada jam berapa.</em>
+    <em>Tampilan UI-UX Web Daashboard untuk memantau alat PakanPitik via WiFi di berbagai device. Design dibuat menggunakan Figma. Pada bagian Live status terdapat sisa pakan pada penampung yang dibaca oleh sensor Ultasonic HC-SR04, serta beberapa status lain seperti jam pemberian pakan terakhir, lalu dikanannya terdapat bagian untuk setting jadwal pakan otomatis untuk pagi, siang sore. kemudian dikanannya terdapat juga lama dari servo membuka, dalam satuan milisecond. Pada bagian bawah terdapat tombol untuk memberi pakan secara manual, serta di bagian paling bawah terdapat log data history dari aktifitas seperti pemberian pakan manual atau otomatis pada jam berapa.</em>
   </p>
 </div>
 
@@ -181,7 +181,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
   <br><br>
   <img src="Simulasi\Wokwi.png" width="800">
   <p align="justify">
-    <em>Adaptasi simulasi untuk pengujian sistem PakanPitik yang disesuaikan dengan komponen pada Shield PCB.</em>
+    <em>Diatas merupakan vidio untuk simulasi pada pengujian sistem PakanPitik yang disesuaikan dengan komponen pada Shield PCB.</em>
   </p>
 </div>
 
