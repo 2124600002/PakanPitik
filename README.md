@@ -167,10 +167,6 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 </div>
 
 ### Simulasi Program Wokwi
-<div align="justify">
-<em>Adaptasi simulasi untuk pengujian sistem PakanPitik yang disesuaikan dengan komponen pada Shield PCB.</em>
-</div>
-
 <div align="center">
   <br>
   <a href="https://wokwi.com/projects/465155487486760961" target="_blank">
@@ -179,7 +175,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
   <br><br>
   <img src="Simulasi\Wokwi.png" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Adaptasi simulasi untuk pengujian sistem PakanPitik yang disesuaikan dengan komponen pada Shield PCB.</em>
   </p>
 </div>
 
