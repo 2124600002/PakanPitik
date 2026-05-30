@@ -101,33 +101,69 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 ### Desain 3D
 <div align="center">
   <img src="3D Design\PakanPitik 3D.bmp" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
   <br><br>
+
   <img src="3D Design\PakanPitik 3D 2.bmp" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
   <br><br>
+
   <img src="3D Design\PakanPitik 3D 3.bmp" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
   <br><br>
+
   <img src="3D Design\PakanPitik 3D 7.bmp" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
   <br><br>
+
   <img src="3D Design\PakanPitik 3D 5.bmp" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
   <br><br>
+
   <img src="3D Design\PakanPitik 3D 6.bmp" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
 </div>
 
 ### Blok Diagram
 <div align="center">
   <img src="Blokdiagram\Blockdiagram baru.png" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
 </div>
 
 ### Flowchart
 <div align="center">
   <img src="Flowchart\Flowchart baru 1.png" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
   <br><br>
+
   <img src="Flowchart\Flowchart baru 2.png" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
 </div>
 
 ### UI/UX Web Dashboard
 <div align="center">
-  <img src="UI-UX\Desain UI-UX figma 2.png" width="600">
+  <img src="UI-UX\Tampilan UI-UX.png" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
 </div>
 
 ### Simulasi Program Wokwi
@@ -142,6 +178,9 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
   </a>
   <br><br>
   <img src="Simulasi\Wokwi.png" width="600">
+  <p align="justify">
+    <em>[Isi deskripsi di sini]</em>
+  </p>
 </div>
 
 <hr>
