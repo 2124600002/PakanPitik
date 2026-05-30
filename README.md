@@ -106,8 +106,15 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <img src="UI-UX\Desain UI-UX figma 2.png" height="600">
 
 ### Simulasi Program Wokwi
-*Adaptasi sementara untuk pengujian akademis (Sesuai rubrik Shield PCB)*
-<img src="Simulasi\Wokwi.png">
+*Adaptasi simulasi untuk pengujian sistem PakanPitik yang diSesuaikan dengan komponen pada Shield PCB*
+
+<div align="center">
+  <a href="https://wokwi.com/projects/465155487486760961" target="_blank">
+    <img src="https://img.shields.io/badge/▶_Coba_Simulasi_di_Wokwi-1199EE?style=for-the-badge" alt="Buka Wokwi">
+  </a>
+  <br><br>
+  <img src="Simulasi\Wokwi.png">
+</div>
 
 <hr>
 
