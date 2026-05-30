@@ -51,7 +51,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 |      NRP      |        Nama        |        Jobdesk          |
 | :-----------: |:----------------:  | :-------------------:   |
 | 2124600002    | M. Rizky Ramadhan  | Project Manager         |
-| 2124600005    | Musa Hamonangan L. | UI UX Design            |
+| 2124600005    | Musa Hamonangan L. | UI/UX Design            |
 | 2124600007    | Muh Yusni Muzaky F.| Hardware                |
 | 2124600012    | Ferris Adiwidya H. | Software & Documentation|
 | 2124600016    | Reyhan Fachri A.H. | Software & Documentation|
@@ -164,11 +164,11 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
   </p>
 </div>
 
-### UI-UX Web Dashboard
+### UI/UX Web Dashboard
 <div align="center">
   <br>
   <a href="https://www.figma.com/design/T8wNbSInKxWhA6DcHFIXEK/Untitled?node-id=0-1&t=T81r4mzvqB2A10Lv-1" target="_blank">
-    <img src="https://img.shields.io/badge/▶_Design_UI-UX_di_Figma-1199EE?style=for-the-badge" alt="Buka Figma">
+    <img src="https://img.shields.io/badge/Figma_Design_UI/UX-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Figma">
   </a>
   <br><br>
   <img src="UI-UX\Tampilan UI-UX.png" width="800">
