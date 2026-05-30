@@ -144,7 +144,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 ### Blok Diagram
 <div align="center">
-  <img src="Blokdiagram\Blockdiagram nyata rev.png" width="800">
+  <img src="Blokdiagram\Blockdiagram nyata revisi.png" width="800">
   <p align="justify">
     Blok diagram di atas merepresentasikan alur koneksi dan komunikasi dari perangkat keras PakanPitik yang sebenarnya (sistem nyata terimplementasi), bukan adaptasi sementara berbasis Shield ATmega2560.
   </p>
