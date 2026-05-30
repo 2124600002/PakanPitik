@@ -82,19 +82,19 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="Hardware\3D PCB.jpeg" width="800">
   <p align="justify">
-    <em>Tampilan 3D dari board slave untuk sistem PakanPitik.</em>
+    <em>Tampilan 3D dari board PCB slave untuk sistem PakanPitik.</em>
   </p>
   <br>
   
   <img src="Hardware\Desain PCB.jpeg" width="800">
   <p align="justify">
-    <em>Wiring pada board PCB slave dengan menggunakan bottom layer saja untuk menghemat dan mempermudah dalam proses pencetakkan.</em>
+    <em>Wiring pada board PCB slave dengan menggunakan bottom layer saja untuk menghemat biaya dan mempermudah dalam proses pencetakkan.</em>
   </p>
   <br>
 
   <img src="Hardware\Skematik PCB.jpeg" width="800">
   <p align="justify">
-    <em>Desain skematik dari board PCB slave yang digunakan pada PakanPitik.</em>
+    <em>Desain skematik dari board PCB slave yang digunakan pada PakanPitik, dimana dari board PCB slave ini nantinya akan banyak dihubungkan menggunakan connector JST menggunakan kabel menuju board shield ATmega2560.</em>
   </p>
 </div>
 
@@ -102,37 +102,43 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="3D Design\PakanPitik 3D.bmp" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Tampak dari Design 3D dari PakanPitik yang didesain menggunakan Inventor, dimana dapat kita lihat disana terdapat Penampung makanan unggas, servo sebagai aktuator untuk membuka dan menutup makanan yang keluar dari penampung melalui corong, kemudian terdapat bracket penghubung antara alat pemberi pakan dan box IoT, dimana bracket ini dapat diggunakan untuk menggantungkan alat pada sebuah triplek atau papan dengan tebal 2cm. Terdapat juga box IoT yang mana pada bagian depan terdapat LCD 16x2 I2C dan disampingnya terdapat Tombol pakan manual berwarna hijau, serta dibagian bawahnya terdapat input untuk power supply 12V 5A. Selain itu terdapat piring atau wadah makan pada bagian bawah dari penampung nantinya sebagai tempat keluarnya pakan.</em>
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 2.bmp" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Tampak dari isi bagian dalam Box IoT yang mana didalamnya terdapat shield dan board ATmega2560 sebagai master, serta board slave untuk komunikasi sensor dan aktuator serta ESP32 sebagai modul WiFi (dapat diganti menggunakan modul WiFi yang lebih murah, ESP32 dipakai karena itu yang kami punya). Terdapat juga LCD 16x2 Pada bagian tutup box serta Power Supply 12V 5A sebagai supply utama, dipilih Power Supply langsung dibanding menggunakan adaptor karena alat ini harus kuat jika dinyalakan selama 24 jam sehingga agar daya yang masuk stabil dipilihlah power supply.</em>
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 3.bmp" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Tampak depan dari alat PakanPitik saat box ditutup, terdapat LCD 16x2 sebagai display dai alat.</em>
+  </p>
+  <br><br>
+
+  <img src="3D Design\PakanPitik 3D 4.bmp" width="800">
+  <p align="justify">
+    <em>Tampak dari bagian corong pada bagian bawah penampung pakan, dengan penutup menggunakan servo MG90 agar daya tahan nya cukup kuat.</em>
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 7.bmp" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Penempatan sensor ultrasonic pada bagian penutup penampung pakan dipaling atas yang mengarah kebawah, fungsinya untuk mengukur level Pakan yang tersisa.</em>
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 5.bmp" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Posisi servo membuka, saat jam diberi pakan otomatis atau saat tombol pakan ditekan servo akan membuka, dengan lama bukanya dapat diatur pada GUI.</em>
   </p>
   <br><br>
 
   <img src="3D Design\PakanPitik 3D 6.bmp" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Posisi servo menutup, saat tidak ada aktivitas ataupun belum saatnya untuk memberi pakan otomatis, servo akan menutup bagian bawah corong dari penampung pakan agar pakan tidak keluar serta tidak ada semut yang masuk.[Isi deskripsi di sini]</em>
   </p>
 </div>
 
@@ -140,7 +146,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="Blokdiagram\Blockdiagram baru.png" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Blockdiagram diatas merupakan alur koneksi dan komunikasi dari sistem alat PakanPitik nyata bukan yang sesuai shield ATmega2560.</em>
   </p>
 </div>
 
@@ -148,21 +154,21 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <img src="Flowchart\Flowchart baru 1.png" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Flowchart logika dari cara alat PakanPitik bekerja bagian pertama</em>
   </p>
   <br><br>
 
   <img src="Flowchart\Flowchart baru 2.png" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Flowchart logika dari cara alat PakanPitik bekerja bagian kedua</em>
   </p>
 </div>
 
-### UI/UX Web Dashboard
+### UI-UX Web Dashboard
 <div align="center">
   <img src="UI-UX\Tampilan UI-UX.png" width="800">
   <p align="justify">
-    <em>[Isi deskripsi di sini]</em>
+    <em>Tampilan UI-UX Web Daashboar untuk memantau alat PakanPitik via WiFi di berbagai device. Design dibuat menggunakan Figma. Pada bagian Live status terdapat sisa pakan pada penampung yang dibaca oleh sensor Ultasonic HC-SR04, serta beberapa status lain seperti jam pemberian pakan terakhir, lalu dikanannya terdapat bagian untuk setting jadwal pakan otomatis untuk pagi, siang sore. kemudian dikanannya terdapat juga lama dari servo membuka, dalam satuan milisecond. Pada bagian bawah terdapat tombol untuk memberi pakan secara manual, serta di bagian paling bawah terdapat log data history dari aktifitas seperti pemberian pakan manual atau otomatis pada jam berapa.</em>
   </p>
 </div>
 
