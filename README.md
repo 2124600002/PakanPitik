@@ -3,11 +3,11 @@
   <h1>PakanPitik</h1>
   <p><em>"Inovasi cerdas untuk meringankan beban peternak ayam lokal dan mewujudkan kemandirian pangan"</em></p>
   <br>
-
-  <div align="center">
-  <video src="Assets/Video/Intro.mp4" width="800" controls="controls"></video>
-  </div>
-
+  
+  <video width="800" controls>
+    <source src="LINK_DARI_GITHUB_ASSET_DI_SINI" type="video/mp4">
+  </video>
+  
 </div>
 
 <hr>
