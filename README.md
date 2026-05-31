@@ -61,9 +61,9 @@ Melalui sentuhan otomatisasi tepat guna ini, PakanPitik tidak hanya meningkatkan
 Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasis IoT untuk memantau ketersediaan pakan secara <em>real-time</em> dan mengontrol aktuator distribusi pakan (berbasis jadwal atau <em>remote on-demand</em>). Proyek ini ditujukan untuk mempermudah pekerjaan peternak, mencegah pakan terbuang percuma melalui fitur durasi dinamis, dan menaikkan efisiensi operasional kandang.
 </div>
 
-### Support BY :
+### Support By :
 >- **Dosen Pengampu** : Akhmad Hendriawan ST., MT.
->- **Mata kuliah** : Mikrokontroller
+>- **Mata kuliah** : Mikrokontroler
 >- **Program Studi** : D4 Teknik Elektronika A
 >- **Politeknik Elektronika Negeri Surabaya**
 
@@ -72,7 +72,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 # Anggota Kelompok 1
 
 <div align="center">
-  <img src="Assets\Banner kelompok.png" width="800">
+  <img src="Assets/Banner kelompok.png" width="800">
 </div>
 <br>
 
@@ -108,19 +108,19 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 ### Desain Hardware 
 <div align="center">
-  <img src="Hardware\3D PCB.jpeg" width="800">
+  <img src="Hardware/3D PCB.jpeg" width="800">
   <p align="justify">
     Tampilan 3D dari board PCB slave untuk sistem PakanPitik.
   </p>
   <br>
   
-  <img src="Hardware\Desain PCB.jpeg" width="800">
+  <img src="Hardware/Desain PCB.jpeg" width="800">
   <p align="justify">
     Wiring pada board PCB slave dengan menggunakan bottom layer saja untuk menghemat biaya dan mempermudah dalam proses pencetakan.
   </p>
   <br>
 
-  <img src="Hardware\Skematik PCB.jpeg" width="800">
+  <img src="Hardware/Skematik PCB.jpeg" width="800">
   <p align="justify">
     Desain skematik dari board PCB slave yang digunakan pada PakanPitik, dimana dari board PCB slave ini nantinya akan banyak dihubungkan menggunakan konektor JST melalui kabel menuju board shield ATmega2560.
   </p>
@@ -128,43 +128,43 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 ### Desain 3D
 <div align="center">
-  <img src="3D Design\PakanPitik 3D.bmp" width="800">
+  <img src="3D Design/PakanPitik 3D.bmp" width="800">
   <p align="justify">
     Tampak desain 3D dari PakanPitik yang dirancang menggunakan perangkat lunak Inventor. Pada desain tersebut, dapat dilihat penampung makanan unggas, servo sebagai aktuator untuk membuka dan menutup saluran pakan melalui corong, serta bracket penghubung antara alat pemberi pakan dan box IoT. Bracket ini dapat digunakan untuk menggantungkan alat pada triplek atau papan dengan ketebalan 2cm. Terdapat juga box IoT yang pada bagian depannya dilengkapi LCD 16x2 I2C, tombol pakan manual berwarna hijau, serta port input untuk power supply 12V 5A di bagian bawah. Selain itu, piring atau wadah pakan ditempatkan di bagian bawah penampung sebagai area keluarnya pakan.
   </p>
   <br><br>
 
-  <img src="3D Design\PakanPitik 3D 2.bmp" width="800">
+  <img src="3D Design/PakanPitik 3D 2.bmp" width="800">
   <p align="justify">
     Tampak bagian dalam Box IoT yang memuat shield dan board ATmega2560 sebagai master, board slave untuk komunikasi sensor dan aktuator, serta ESP32 sebagai modul WiFi (modul WiFi ini dapat diganti dengan alternatif yang lebih terjangkau, namun ESP32 dipilih karena ketersediaan perangkat). LCD 16x2 terpasang pada penutup box, sedangkan Power Supply 12V 5A berfungsi sebagai sumber daya utama. Penggunaan Power Supply langsung dipilih alih-alih adaptor biasa agar sistem mampu beroperasi secara stabil dan tangguh selama 24 jam nonstop.
   </p>
   <br><br>
 
-  <img src="3D Design\PakanPitik 3D 3.bmp" width="800">
+  <img src="3D Design/PakanPitik 3D 3.bmp" width="800">
   <p align="justify">
     Tampak depan dari alat PakanPitik saat box tertutup, dengan LCD 16x2 yang berfungsi sebagai layar informasi sistem.
   </p>
   <br><br>
 
-  <img src="3D Design\PakanPitik 3D 4.bmp" width="800">
+  <img src="3D Design/PakanPitik 3D 4.bmp" width="800">
   <p align="justify">
     Tampak bagian corong di dasar penampung pakan, dilengkapi dengan penutup yang digerakkan oleh servo MG90 untuk memastikan daya tahan yang cukup kuat.
   </p>
   <br><br>
 
-  <img src="3D Design\PakanPitik 3D 7.bmp" width="800">
+  <img src="3D Design/PakanPitik 3D 7.bmp" width="800">
   <p align="justify">
     Penempatan sensor ultrasonik pada penutup paling atas penampung pakan, menghadap ke bawah. Fungsinya adalah untuk mengukur level atau sisa pakan di dalam wadah secara real-time.
   </p>
   <br><br>
 
-  <img src="3D Design\PakanPitik 3D 5.bmp" width="800">
+  <img src="3D Design/PakanPitik 3D 5.bmp" width="800">
   <p align="justify">
     Posisi servo saat terbuka. Ketika jadwal pakan otomatis tiba atau tombol pakan manual ditekan, servo akan membuka katup. Durasi bukaan ini dapat diatur langsung melalui antarmuka GUI (Web Dashboard).
   </p>
   <br><br>
 
-  <img src="3D Design\PakanPitik 3D 6.bmp" width="800">
+  <img src="3D Design/PakanPitik 3D 6.bmp" width="800">
   <p align="justify">
     Posisi servo saat tertutup. Saat sistem sedang tidak aktif atau belum mencapai waktu pemberian pakan otomatis, servo akan menutup rapat bagian bawah corong penampung untuk mencegah pakan keluar secara tidak sengaja dan menghindari masuknya semut atau hama lain ke dalam wadah.
   </p>
@@ -172,7 +172,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 ### Blok Diagram
 <div align="center">
-  <img src="Blokdiagram\Blockdiagram nyata revisi.png" width="800">
+  <img src="Blokdiagram/Blockdiagram nyata revisi.png" width="800">
   <p align="justify">
     Blok diagram di atas merepresentasikan alur koneksi dan komunikasi dari perangkat keras PakanPitik yang sebenarnya (sistem nyata terimplementasi), bukan adaptasi sementara berbasis Shield ATmega2560.
   </p>
@@ -180,13 +180,13 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 ### Flowchart
 <div align="center">
-  <img src="Flowchart\Flowchart baru 1.png" width="800">
+  <img src="Flowchart/Flowchart baru 1.png" width="800">
   <p align="justify">
     Flowchart logika yang menggambarkan alur kerja sistem PakanPitik (Bagian Pertama).
   </p>
   <br><br>
 
-  <img src="Flowchart\Flowchart baru 2.png" width="800">
+  <img src="Flowchart/Flowchart baru 2.png" width="800">
   <p align="justify">
     Flowchart logika yang menggambarkan alur kerja sistem PakanPitik (Bagian Kedua).
   </p>
@@ -199,7 +199,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     <img src="https://img.shields.io/badge/Lihat_Mindmap_Figjam-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Mindmap">
   </a>
   <br><br>
-  <img src="Mindmap\Mindmap.png" width="800">
+  <img src="Mindmap/Mindmap.png" width="800">
   <p align="justify">
     Mindmap ini menggambarkan tahapan brainstorming dan perencanaan strategis awal untuk proyek kelompok berbasis IoT. Diagram ini memetakan beberapa alternatif ide penyelesaian masalah, kriteria utama dalam menyeleksi ide (seperti manfaat, waktu, kesulitan, dan ketersediaan komponen), hingga gambaran umum kebutuhan perangkat keras. Melalui pemetaan ini, kelompok secara spesifik memutuskan untuk mengembangkan Pakan Ayam Otomatis (PakanPitik) karena dinilai paling efektif dalam mengatasi food waste, memungkinkan pemantauan sisa stok pakan, dan memiliki skala proyek yang terukur. Selain itu, diagram ini juga memperlihatkan struktur pembagian tugas masing-masing anggota tim.
   </p>
@@ -212,7 +212,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     <img src="https://img.shields.io/badge/Lihat_Fishbone_Figjam-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Fishbone">
   </a>
   <br><br>
-  <img src="Fishbone\Fishbone.png" width="800">
+  <img src="Fishbone/Fishbone.png" width="800">
   <p align="justify">
    Diagram Fishbone digunakan untuk membedah akar permasalahan dari ketidakefisienan proses pemberian pakan unggas secara manual. Diagram ini mengkategorikan penyebab masalah ke dalam enam aspek utama, yaitu manusia, metode, alat, material, lingkungan, dan pengukuran (seperti sering lupa jadwal, wadah konvensional yang membuat pakan tercecer, hingga tidak adanya riwayat data konsumsi). Secara keseluruhan, akumulasi dari keenam faktor tersebut bermuara pada satu masalah utama yang merugikan peternak, yaitu pemborosan pakan (food waste), ketidakseragaman pertumbuhan ayam, serta melambungnya biaya operasional.
   </p>
@@ -225,7 +225,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     <img src="https://img.shields.io/badge/Desain_Figma_UI/UX-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Figma">
   </a>
   <br><br>
-  <img src="UI-UX\Tampilan UI-UX.png" width="800">
+  <img src="UI-UX/Tampilan UI-UX.png" width="800">
   <p align="justify">
     Tampilan UI/UX Web Dashboard yang dirancang menggunakan Figma untuk memantau alat PakanPitik via WiFi di berbagai perangkat. Panel "Live Status" menampilkan persentase sisa pakan di penampung (berdasarkan pembacaan sensor Ultrasonik HC-SR04) dan waktu pemberian pakan terakhir. Di sebelah kanan, terdapat form untuk mengatur jadwal pakan otomatis (Pagi, Siang, Sore) beserta input durasi bukaan servo (dalam milidetik). Di bagian tengah, tersedia tombol interaktif untuk mengeksekusi pemberian pakan secara manual. Bagian paling bawah menampilkan tabel log history yang mencatat detail setiap aktivitas operasional alat secara real-time.
   </p>
@@ -238,7 +238,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     <img src="https://img.shields.io/badge/Simulasi_Wokwi-FF0000?style=for-the-badge&logo=arduino&logoColor=white" alt="Buka Wokwi">
   </a>
   <br><br>
-  <img src="Assets\Wokwi.png" width="800">
+  <img src="Assets/Wokwi.png" width="800">
   <p align="justify">
     Tangkapan layar di atas menunjukkan pengujian simulasi logika sistem PakanPitik yang sementara ini disesuaikan dengan komponen input/output yang tersedia pada Shield PCB ATmega2560.
   </p>
