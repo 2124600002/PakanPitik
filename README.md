@@ -171,6 +171,32 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
   </p>
 </div>
 
+### Mindmap Diagram
+<div align="center">
+  <br>
+  <a href="https://www.figma.com/board/ega8brmlDySx4cgtJ8I34z/Mind-Map?node-id=0-1&t=bGIroIMrDm2866S6-1" target="_blank">
+    <img src="https://img.shields.io/badge/Lihat_Mindmap-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Mindmap">
+  </a>
+  <br><br>
+  <img src="Mindmap\Mindmap.png" width="800">
+  <p align="justify">
+    Mindmap ini menggambarkan tahapan brainstorming dan perencanaan strategis awal untuk proyek kelompok berbasis IoT. Diagram ini memetakan beberapa alternatif ide penyelesaian masalah, kriteria utama dalam menyeleksi ide (seperti manfaat, waktu, kesulitan, dan ketersediaan komponen), hingga gambaran umum kebutuhan perangkat keras. Melalui pemetaan ini, kelompok secara spesifik memutuskan untuk mengembangkan Pakan Ayam Otomatis (PakanPitik) karena dinilai paling efektif dalam mengatasi food waste, memungkinkan pemantauan sisa stok pakan, dan memiliki skala proyek yang terukur. Selain itu, diagram ini juga memperlihatkan struktur pembagian tugas masing-masing anggota tim.
+  </p>
+</div>
+
+### Fishbone Diagram
+<div align="center">
+  <br>
+  <a href="https://www.figma.com/board/ZbEIWirykj9XnRzqu0P9ER/Untitled?t=ggg7TkWvkMyIfHQo-1" target="_blank">
+    <img src="https://img.shields.io/badge/Lihat_Fishbone-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Fishbone">
+  </a>
+  <br><br>
+  <img src="Fishbone\Fishbone.png" width="800">
+  <p align="justify">
+   Diagram Fishbone digunakan untuk membedah akar permasalahan dari ketidakefisienan proses pemberian pakan unggas secara manual. Diagram ini mengkategorikan penyebab masalah ke dalam enam aspek utama, yaitu manusia, metode, alat, material, lingkungan, dan pengukuran (seperti sering lupa jadwal, wadah konvensional yang membuat pakan tercecer, hingga tidak adanya riwayat data konsumsi). Secara keseluruhan, akumulasi dari keenam faktor tersebut bermuara pada satu masalah utama yang merugikan peternak, yaitu pemborosan pakan (food waste), ketidakseragaman pertumbuhan ayam, serta melambungnya biaya operasional.
+  </p>
+</div>
+
 ### UI/UX Web Dashboard
 <div align="center">
   <br>
