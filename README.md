@@ -1,13 +1,14 @@
 <div align="center">
-  <img src="Assets\Logo PakanPitik.png" width="250">
+  <img src="Assets/Logo PakanPitik.png" width="250">
   <h1>PakanPitik</h1>
   <p><em>"Inovasi cerdas untuk meringankan beban peternak ayam lokal dan mewujudkan kemandirian pangan"</em></p>
-  <br>
   
-  <a href="https://github.com/2124600002/PakanPitik/blob/main/Assets/Video/Intro.mp4">
-     <img src="Assets\Banner promosi\Banner promosi 1.png" width="800">
-     <p>Klik di sini untuk menonton Video Intro PakanPitik</p>
-  </a> 
+  <img src="Assets/Banner promosi/Banner promosi 1.png" width="800">
+  <br>
+
+  <a href="https://private-user-images.githubusercontent.com/220716992/600563461-da814451-3c9b-40f2-a974-50b6924e28d4.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODAyMDUyOTgsIm5iZiI6MTc4MDIwNDk5OCwicGF0aCI6Ii8yMjA3MTY5OTIvNjAwNTYzNDYxLWRhODE0NDUxLTNjOWItNDBmMi1hOTc0LTUwYjY5MjRlMjhkNC5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUzMVQwNTIzMThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wZDQ2M2ExNTMxYmEwMDVhM2MzNmFkMzBmY2I2NThkZGJjYzNhOGFhMjUwMTRiMjczNWJmYzMzNjhlNTcwOTMyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9dmlkZW8lMkZtcDQifQ.cxt_SJKvcFFeR7vsQ9bQ55BhMZWfmB25gWCc69m8j68" target="_blank">
+    <img src="https://img.shields.io/badge/Tonton_Video_Intro-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Tonton Video Intro">
+  </a>
 </div>
 
 <hr>
