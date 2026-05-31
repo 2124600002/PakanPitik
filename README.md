@@ -5,7 +5,7 @@
   <br>
   
   <video width="800" controls>
-    <source src="LINK_DARI_GITHUB_ASSET_DI_SINI" type="video/mp4">
+    <source src="https://github.com/user-attachments/assets/8bc54ac9-5523-4d7d-af84-0a1b58d0bff0" type="video/mp4">
   </video>
   
 </div>
