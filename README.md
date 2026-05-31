@@ -9,6 +9,27 @@
   <a href="https://drive.google.com/file/d/1knvE6YDGjDPh6mzlQrbH5e85_T9ZMVah/view?usp=sharing" target="_blank">
     <img src="https://img.shields.io/badge/Tonton_Video_Intro-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Tonton Video Intro">
   </a>
+
+  <br><br>
+  <h3>🔗 Tautan Cepat (Quick Links)</h3>
+  <a href="https://drive.google.com/file/d/1knvE6YDGjDPh6mzlQrbH5e85_T9ZMVah/view?usp=sharing" target="_blank">
+    <img src="https://img.shields.io/badge/Video_Intro-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
+  </a>&nbsp;
+  <a href="https://www.figma.com/board/ega8brmlDySx4cgtJ8I34z/Mind-Map?node-id=0-1&t=bGIroIMrDm2866S6-1" target="_blank">
+    <img src="https://img.shields.io/badge/Mindmap-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Mindmap">
+  </a>&nbsp;
+  <a href="https://www.figma.com/board/ZbEIWirykj9XnRzqu0P9ER/Untitled?t=ggg7TkWvkMyIfHQo-1" target="_blank">
+    <img src="https://img.shields.io/badge/Fishbone-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Fishbone">
+  </a>&nbsp;
+  <a href="https://www.figma.com/design/T8wNbSInKxWhA6DcHFIXEK/Untitled?node-id=0-1&t=T81r4mzvqB2A10Lv-1" target="_blank">
+    <img src="https://img.shields.io/badge/UI/UX_Desain-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="UI/UX">
+  </a>&nbsp;
+  <a href="https://wokwi.com/projects/465155487486760961" target="_blank">
+    <img src="https://img.shields.io/badge/Simulasi_Wokwi-FF0000?style=for-the-badge&logo=arduino&logoColor=white" alt="Wokwi">
+  </a>&nbsp;
+  <a href="https://canva.link/mmxi6qf92nia2kq" target="_blank">
+    <img src="https://img.shields.io/badge/PPT_Canva-FF0000?style=for-the-badge&logo=canva&logoColor=white" alt="PPT Canva">
+  </a>
 </div>
 
 <hr>
@@ -175,7 +196,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <br>
   <a href="https://www.figma.com/board/ega8brmlDySx4cgtJ8I34z/Mind-Map?node-id=0-1&t=bGIroIMrDm2866S6-1" target="_blank">
-    <img src="https://img.shields.io/badge/Lihat_Mindmap-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Mindmap">
+    <img src="https://img.shields.io/badge/Lihat_Mindmap_Figjam-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Mindmap">
   </a>
   <br><br>
   <img src="Mindmap\Mindmap.png" width="800">
@@ -188,7 +209,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <br>
   <a href="https://www.figma.com/board/ZbEIWirykj9XnRzqu0P9ER/Untitled?t=ggg7TkWvkMyIfHQo-1" target="_blank">
-    <img src="https://img.shields.io/badge/Lihat_Fishbone-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Fishbone">
+    <img src="https://img.shields.io/badge/Lihat_Fishbone_Figjam-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Fishbone">
   </a>
   <br><br>
   <img src="Fishbone\Fishbone.png" width="800">
