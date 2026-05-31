@@ -122,6 +122,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     Desain skematik dari board PCB slave yang digunakan pada PakanPitik, dimana dari board PCB slave ini nantinya akan banyak dihubungkan menggunakan konektor JST melalui kabel menuju board shield ATmega2560.
   </p>
 </div>
+<br>
 
 ### Desain 3D
 <div align="center">
@@ -160,6 +161,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     Posisi servo saat tertutup. Saat sistem sedang tidak aktif atau belum mencapai waktu pemberian pakan otomatis, servo akan menutup rapat bagian bawah corong penampung untuk mencegah pakan keluar secara tidak sengaja dan menghindari masuknya semut atau hama lain ke dalam wadah.
   </p>
 </div>
+<br>
 
 ### Blok Diagram
 <div align="center">
@@ -168,6 +170,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     Blok diagram di atas merepresentasikan alur koneksi dan komunikasi dari perangkat keras PakanPitik yang sebenarnya (sistem nyata terimplementasi), bukan adaptasi sementara berbasis Shield ATmega2560.
   </p>
 </div>
+<br>
 
 ### Flowchart
 <div align="center">
@@ -181,6 +184,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     Flowchart logika yang menggambarkan alur kerja sistem PakanPitik (Bagian Kedua).
   </p>
 </div>
+<br>
 
 ### Mindmap Diagram
 <div align="center">
@@ -194,6 +198,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     Mindmap ini menggambarkan tahapan brainstorming dan perencanaan strategis awal untuk proyek kelompok berbasis IoT. Diagram ini memetakan beberapa alternatif ide penyelesaian masalah, kriteria utama dalam menyeleksi ide (seperti manfaat, waktu, kesulitan, dan ketersediaan komponen), hingga gambaran umum kebutuhan perangkat keras. Melalui pemetaan ini, kelompok secara spesifik memutuskan untuk mengembangkan Pakan Ayam Otomatis (PakanPitik) karena dinilai paling efektif dalam mengatasi food waste, memungkinkan pemantauan sisa stok pakan, dan memiliki skala proyek yang terukur. Selain itu, diagram ini juga memperlihatkan struktur pembagian tugas masing-masing anggota tim.
   </p>
 </div>
+<br>
 
 ### Fishbone Diagram
 <div align="center">
@@ -207,6 +212,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
    Diagram Fishbone digunakan untuk membedah akar permasalahan dari ketidakefisienan proses pemberian pakan unggas secara manual. Diagram ini mengkategorikan penyebab masalah ke dalam enam aspek utama, yaitu manusia, metode, alat, material, lingkungan, dan pengukuran (seperti sering lupa jadwal, wadah konvensional yang membuat pakan tercecer, hingga tidak adanya riwayat data konsumsi). Secara keseluruhan, akumulasi dari keenam faktor tersebut bermuara pada satu masalah utama yang merugikan peternak, yaitu pemborosan pakan (food waste), ketidakseragaman pertumbuhan ayam, serta melambungnya biaya operasional.
   </p>
 </div>
+<br>
 
 ### UI/UX Web Dashboard
 <div align="center">
@@ -220,6 +226,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
     Tampilan UI/UX Web Dashboard yang dirancang menggunakan Figma untuk memantau alat PakanPitik via WiFi di berbagai perangkat. Panel "Live Status" menampilkan persentase sisa pakan di penampung (berdasarkan pembacaan sensor Ultrasonik HC-SR04) dan waktu pemberian pakan terakhir. Di sebelah kanan, terdapat form untuk mengatur jadwal pakan otomatis (Pagi, Siang, Sore) beserta input durasi bukaan servo (dalam milidetik). Di bagian tengah, tersedia tombol interaktif untuk mengeksekusi pemberian pakan secara manual. Bagian paling bawah menampilkan tabel log history yang mencatat detail setiap aktivitas operasional alat secara real-time.
   </p>
 </div>
+<br>
 
 ### Simulasi Program Wokwi
 <div align="center">
