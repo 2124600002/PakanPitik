@@ -1,12 +1,13 @@
 <div align="center">
-  <img src="Assets\Banner promosi\Banner promosi 1.png" width="800">
+  <img src="Assets\Logo PakanPitik.png" width="250">
   <h1>PakanPitik</h1>
   <p><em>"Inovasi cerdas untuk meringankan beban peternak ayam lokal dan mewujudkan kemandirian pangan"</em></p>
   <br>
   
-  <video width="800" controls>
-    <source src="https://github.com/2124600002/PakanPitik/raw/refs/heads/main/Assets/Video/Intro.mp4" type="video/mp4">
-  </video> 
+  <a href="https://github.com/2124600002/PakanPitik/blob/main/Assets/Video/Intro.mp4">
+     <img src="Assets\Banner promosi\Banner promosi 1.png" width="800">
+     <p>Klik di sini untuk menonton Video Intro PakanPitik</p>
+  </a> 
 </div>
 
 <hr>
