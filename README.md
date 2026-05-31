@@ -5,9 +5,8 @@
   <br>
   
   <video width="800" controls>
-    <source src="https://private-user-images.githubusercontent.com/220716992/600563461-da814451-3c9b-40f2-a974-50b6924e28d4.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODAyMDQ1NjcsIm5iZiI6MTc4MDIwNDI2NywicGF0aCI6Ii8yMjA3MTY5OTIvNjAwNTYzNDYxLWRhODE0NDUxLTNjOWItNDBmMi1hOTc0LTUwYjY5MjRlMjhkNC5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNTMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDUzMVQwNTExMDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01OGJhMGE4ZDZjMzVhMmM1MTEyZGY0YzY4OTIzNWIwNTRkZDk2YzQ0YjQxMTllYWZlNGFkZWZlN2M3YWYyZTA0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9dmlkZW8lMkZtcDQifQ.SgACAEhhHotT8ebRfMeF3SLV06d3Ic17P1MGl5TWp6s" type="video/mp4">
-  </video>
-  
+    <source src="https://github.com/2124600002/PakanPitik/raw/refs/heads/main/Assets/Video/Intro.mp4" type="video/mp4">
+  </video> 
 </div>
 
 <hr>
