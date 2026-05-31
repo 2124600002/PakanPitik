@@ -2,6 +2,12 @@
   <img src="Assets\Banner promosi\Banner promosi 1.png" width="800">
   <h1>PakanPitik</h1>
   <p><em>"Inovasi cerdas untuk meringankan beban peternak ayam lokal dan mewujudkan kemandirian pangan"</em></p>
+  <br>
+
+  <div align="center">
+  <video src="Assets/Video/Intro.mp4" width="800" controls="controls"></video>
+  </div>
+
 </div>
 
 <hr>
