@@ -175,7 +175,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <br>
   <a href="https://www.figma.com/design/T8wNbSInKxWhA6DcHFIXEK/Untitled?node-id=0-1&t=T81r4mzvqB2A10Lv-1" target="_blank">
-    <img src="https://img.shields.io/badge/Figma_Design_UI/UX-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Figma">
+    <img src="https://img.shields.io/badge/Desain_Figma_UI/UX-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Figma">
   </a>
   <br><br>
   <img src="UI-UX\Tampilan UI-UX.png" width="800">
@@ -188,7 +188,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
   <br>
   <a href="https://wokwi.com/projects/465155487486760961" target="_blank">
-    <img src="https://img.shields.io/badge/Wokwi_Simulation-FF0000?style=for-the-badge&logo=arduino&logoColor=white" alt="Buka Wokwi">
+    <img src="https://img.shields.io/badge/Simulasi_Wokwi-FF0000?style=for-the-badge&logo=arduino&logoColor=white" alt="Buka Wokwi">
   </a>
   <br><br>
   <img src="Assets\Wokwi.png" width="800">
