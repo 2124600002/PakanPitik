@@ -3,7 +3,7 @@
   <h1>PakanPitik</h1>
   <p><em>"Inovasi cerdas untuk meringankan beban peternak ayam lokal dan mewujudkan kemandirian pangan"</em></p>
   
-  <img src="Assets/Banner promosi/Banner promosi 1.png" width="800">
+  <img src="Assets/Banner/Banner 1.png" width="800">
   <br>
 
   <a href="https://drive.google.com/file/d/1knvE6YDGjDPh6mzlQrbH5e85_T9ZMVah/view?usp=sharing" target="_blank">
@@ -13,6 +13,9 @@
   <h3>Tautan Cepat (Quick Links)</h3>
   <a href="https://drive.google.com/file/d/1knvE6YDGjDPh6mzlQrbH5e85_T9ZMVah/view?usp=sharing" target="_blank">
     <img src="https://img.shields.io/badge/Video_Intro-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
+  </a>&nbsp;
+  <a href="https://drive.google.com/file/d/1nLfeXrYmbJYR3gHJrhcpqqbRVYnBJc8w/view?usp=sharing" target="_blank">
+    <img src="https://img.shields.io/badge/Video_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
   </a>&nbsp;
   <a href="https://www.figma.com/board/ega8brmlDySx4cgtJ8I34z/Mind-Map?node-id=0-1&t=bGIroIMrDm2866S6-1" target="_blank">
     <img src="https://img.shields.io/badge/Mindmap-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Mindmap">
