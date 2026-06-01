@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="Assets/Logo PakanPitik.png" width="250">
+  <img src="Assets/Flyer PakanPitik.png" width="800">
   <h1>PakanPitik</h1>
   <p><em>"Inovasi cerdas untuk meringankan beban peternak ayam lokal dan mewujudkan kemandirian pangan"</em></p>
   
