@@ -226,7 +226,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
   <a href="https://www.figma.com/design/T8wNbSInKxWhA6DcHFIXEK/Untitled?node-id=0-1&t=T81r4mzvqB2A10Lv-1" target="_blank">
     <img src="https://img.shields.io/badge/Desain_Figma_UI/UX-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Buka Figma">
   </a>&nbsp;
-  <a href="TAUTAN_WEB_DISINI" target="_blank">
+  <a href="https://pakanpitik.netlify.app/" target="_blank">
     <img src="https://img.shields.io/badge/Web_PakanPitik-FF0000?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Web">
   </a>
   <br><br>
