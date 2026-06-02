@@ -1,5 +1,5 @@
 /*
- * ManganPitik v8.1.1 - Master Controller Firmware (SSOT & Dynamic Duration)
+ * PakanPitik v8.1.1 - Master Controller Firmware (SSOT & Dynamic Duration)
  * Architecture: Pure AVR Bare-Metal C++ (ATmega2560)
  * Hardware Connections:
  * - USART0: TCP Bridge Wokwi / USB Laptop (Python HMI Logger)
@@ -20,8 +20,9 @@
 #define SERVO_TUTUP 2000  // Duty cycle ~1ms (Katup Tertutup Rapat)
 #define SERVO_BUKA  4000  // Duty cycle ~2ms (Katup Terbuka Penuh)
 
-// --- DEFINISI DRIVER LCD I2C (PCF8574) ---
-#define LCD_ADDR         0x4E  // (0x27 << 1) Alamat TWI Tulis PCF8574
+// --- DEFINISI DRIVER LCD I2C (PCF8574T) ---
+// PERBAIKAN PENTING: Alamat 0x27 WAJIB digeser 1 bit ke kiri (<< 1) untuk protokol hardware I2C
+#define LCD_ADDR         (0x27 << 1)  // Menjadi 0x4E (Format Tulis / Write Bit = 0)
 #define LCD_REG_SELECT   0x01  // Register Select (RS Bit)
 #define LCD_ENABLE       0x04  // Enable Bit (EN Bit)
 #define LCD_BACKLIGHT    0x08  // Backlight Control Bit
@@ -128,7 +129,7 @@ uint8_t twi_read_nack(void) {
 // =========================================================================
 void lcd_pcf_write(uint8_t data) {
     twi_start();
-    twi_write(LCD_ADDR);
+    twi_write(LCD_ADDR); // Sekarang LCD_ADDR sudah bergeser bit dengan benar
     twi_write(data | LCD_BACKLIGHT);
     twi_stop();
 }
@@ -183,7 +184,7 @@ uint8_t dec_to_bcd(uint8_t val) { return ((val / 10) * 16) + (val % 10); }
 
 void rtc_get_time(WaktuSistem* t) {
     twi_start();
-    twi_write(0xD0); // Alamat tulis RTC
+    twi_write(0xD0); // Alamat tulis RTC (0x68 << 1)
     twi_write(0x00); // Set pointer memori ke register 0x00 (Detik)
     
     twi_start();     // Repeated Start
@@ -285,7 +286,7 @@ int main(void) {
     char lcd_line1[17];
     char lcd_line2[17];
     
-    usart0_print("[MANGANPITIK v8.1.1] Bare-Metal ATmega2560 Active. Dynamic Duration Enabled.\n");
+    usart0_print("[PAKANPITIK v8.1.1] Bare-Metal ATmega2560 Active. Dynamic Duration Enabled.\n");
     
     uint8_t sumber_pakan = 0; // 1: Jadwal, 2: Tombol Fisik, 3: Perintah GUI
 
