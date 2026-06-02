@@ -17,6 +17,9 @@
   <a href="https://drive.google.com/file/d/1nLfeXrYmbJYR3gHJrhcpqqbRVYnBJc8w/view?usp=sharing" target="_blank">
     <img src="https://img.shields.io/badge/Video_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
   </a>&nbsp;
+  <a href="TAUTAN_WEB_DISINI" target="_blank">
+    <img src="https://img.shields.io/badge/Web_PakanPitik-FF0000?style=for-the-badge&logo=canva&logoColor=white" alt="Web">
+  </a>&nbsp;
   <a href="https://www.figma.com/board/ega8brmlDySx4cgtJ8I34z/Mind-Map?node-id=0-1&t=bGIroIMrDm2866S6-1" target="_blank">
     <img src="https://img.shields.io/badge/Mindmap-FF0000?style=for-the-badge&logo=figma&logoColor=white" alt="Mindmap">
   </a>&nbsp;
