@@ -17,6 +17,9 @@
   <a href="https://drive.google.com/file/d/1nLfeXrYmbJYR3gHJrhcpqqbRVYnBJc8w/view?usp=sharing" target="_blank">
     <img src="https://img.shields.io/badge/Video_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
   </a>&nbsp;
+  <a href="https://drive.google.com/file/d/19Tj84D4AJFjI7RVErF9s6wRXGpRxHWza/view?usp=sharing" target="_blank">
+    <img src="https://img.shields.io/badge/Video_3D-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
+  </a>&nbsp;
   <a href="https://pakanpitik.netlify.app/" target="_blank">
     <img src="https://img.shields.io/badge/Web_PakanPitik-FF0000?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Web">
   </a>&nbsp;
@@ -132,6 +135,11 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 
 ### Desain 3D
 <div align="center">
+<br>
+  <a href="https://drive.google.com/file/d/19Tj84D4AJFjI7RVErF9s6wRXGpRxHWza/view?usp=sharing" target="_blank">
+    <img src="https://img.shields.io/badge/Video_3D-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
+  </a>
+  <br><br>
   <img src="3D Design/PakanPitik 3D.bmp" width="800">
   <p align="justify">
     Tampak desain 3D dari PakanPitik yang dirancang menggunakan perangkat lunak Inventor. Pada desain tersebut, dapat dilihat penampung makanan unggas, servo sebagai aktuator untuk membuka dan menutup saluran pakan melalui corong, serta bracket penghubung antara alat pemberi pakan dan box IoT. Bracket ini dapat digunakan untuk menggantungkan alat pada triplek atau papan dengan ketebalan 2cm. Terdapat juga box IoT yang pada bagian depannya dilengkapi LCD 16x2 I2C, tombol pakan manual berwarna hijau, serta port input untuk power supply 12V 5A di bagian bawah. Selain itu, piring atau wadah pakan ditempatkan di bagian bawah penampung sebagai area keluarnya pakan.
