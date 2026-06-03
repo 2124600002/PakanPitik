@@ -137,7 +137,7 @@ Merancang dan mengimplementasikan sistem pemberian pakan unggas otomatis berbasi
 <div align="center">
 <br>
   <a href="https://drive.google.com/file/d/19Tj84D4AJFjI7RVErF9s6wRXGpRxHWza/view?usp=sharing" target="_blank">
-    <img src="https://img.shields.io/badge/Video_3D-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
+    <img src="https://img.shields.io/badge/Tonton_Video_3D-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
   </a>
   <br><br>
   <img src="3D Design/PakanPitik 3D.bmp" width="800">
