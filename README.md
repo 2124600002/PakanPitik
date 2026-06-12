@@ -12,7 +12,7 @@
 
   <h3>Tautan Cepat (Quick Links)</h3>
   <a href="https://drive.google.com/file/d/1gD_iWaVMiUkIKPEJ6pST8Kqmy6I9aC7F/view?usp=sharing" target="_blank">
-    <img src="https://img.shields.io/badge/Tonton_Video_Demo_Kelompok-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Tonton Video Demo Full Kelompok">
+    <img src="https://img.shields.io/badge/Video_Demo_Kelompok-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
   </a>&nbsp;
     <a href="https://drive.google.com/file/d/1nLfeXrYmbJYR3gHJrhcpqqbRVYnBJc8w/view?usp=sharing" target="_blank">
     <img src="https://img.shields.io/badge/Video_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Video">
