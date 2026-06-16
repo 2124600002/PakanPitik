@@ -1,8 +1,8 @@
 /*
- * ManganPitik v8.2.2 - Wokwi to PCB Shield Adaptation (Dynamic Duration & Anti-Double Log)
+ * ManganPitik v8.3.0 - Full Bare-Metal Sync Edition
  * Architecture: Pure AVR Bare-Metal C++ (ATmega2560)
  * Hardware Connections (Sesuai Shield PCB):
- * - USART0: TCP Bridge Wokwi / USB Laptop (Python HMI Logger)
+ * - USART0: USB Port Laptop (Python HMI Logger pada 9600 BPS)
  * - Analog Input (ADC0): Pin A0 (PF0) -> Potensiometer (Simulasi Level Pakan)
  * - Analog Output PWM (Timer 0): Pin 13 (PB7/OC0A) -> LED Indikator Servo
  * - TWI (I2C): Pin 20 (SDA), Pin 21 (SCL) -> RTC DS1307/DS3231 & LCD 16x2 Backpack
@@ -14,7 +14,7 @@
 #include <avr/interrupt.h>
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>  // Ditambahkan untuk fungsi atoi()
+#include <stdlib.h>
 
 // --- DEFINISI DRIVER LCD I2C (PCF8574) ---
 #define LCD_ADDR         0x4E  // (0x27 << 1) Alamat TWI Tulis PCF8574
@@ -37,15 +37,15 @@ typedef struct {
 
 volatile uint8_t flag_beri_makan = 0;
 
-// --- TAMBAHAN BARU: Variabel Pencegah Double Log (Debouncing Waktu) ---
-uint8_t menit_terakhir_eksekusi = 60; // Set ke 60 (tidak valid) sebagai nilai awal
+// --- Variabel Pencegah Double Log (Debouncing Waktu) ---
+uint8_t menit_terakhir_eksekusi = 60; // Nilai awal tidak valid
 
 // Jadwal Default: 07:00, 12:00, 16:30
 uint8_t jadwal_jam[3] = {7, 12, 16};
 uint8_t jadwal_menit[3] = {0, 0, 30};
 
 // --- VARIABEL DURASI PAKAN (dalam milidetik) ---
-uint16_t durasi_pakan_ms = 5000; // Default: LED menyala 5000 ms (5 detik)
+uint16_t durasi_pakan_ms = 5000; // Default: 5 detik
 
 // =========================================================================
 // 1. DRIVER UNIVERSAL ASYNCHRONOUS RECEIVER TRANSMITTER (USART0)
@@ -72,6 +72,8 @@ void usart0_print(const char* str) {
 
 ISR(USART0_RX_vect) {
     char c = UDR0;
+    if (cmd_ready) return; // Kunci buffer jika perintah belum diproses loop utama
+
     if (c == '\n' || c == '\r') {
         if (rx_index > 0) {
             rx_buffer[rx_index] = '\0';
@@ -137,6 +139,7 @@ void lcd_pulse(uint8_t data) {
 }
 
 void lcd_send(uint8_t val, uint8_t mode) {
+    // Penulisan 4-bit Nibble Mode untuk PCF8574
     uint8_t high_nibble = val & 0xF0;
     uint8_t low_nibble = (val << 4) & 0xF0;
     lcd_pulse(high_nibble | mode);
@@ -175,6 +178,19 @@ void lcd_print(const char* str) {
 // 4. DRIVER REAL-TIME CLOCK (RTC DS1307 / DS3231)
 // =========================================================================
 uint8_t bcd_to_dec(uint8_t val) { return ((val / 16) * 10) + (val % 16); }
+uint8_t dec_to_bcd(uint8_t val) { return ((val / 10) * 16) + (val % 10); }
+
+// Fungsi Tulis Waktu Awal ke Modul RTC
+void rtc_set_time(uint8_t jam, uint8_t menit, uint8_t detik) {
+    twi_start();
+    twi_write(0xD0); // Alamat I2C Tulis RTC
+    twi_write(0x00); // Set pointer register ke 0x00 (Detik)
+    
+    twi_write(dec_to_bcd(detik) & 0x7F); // Bit CH (Clock Halt) diset 0 agar RTC berjalan
+    twi_write(dec_to_bcd(menit));
+    twi_write(dec_to_bcd(jam) & 0x3F);   // Menggunakan mode 24 Jam
+    twi_stop();
+}
 
 void rtc_get_time(WaktuSistem* t) {
     twi_start();
@@ -182,12 +198,11 @@ void rtc_get_time(WaktuSistem* t) {
     twi_write(0x00); 
     
     twi_start();     
-    twi_write(0xD1); 
+    twi_write(0xD1); // Alamat I2C Baca RTC
     
     t->detik = bcd_to_dec(twi_read_ack() & 0x7F);
     t->menit = bcd_to_dec(twi_read_ack());
     t->jam   = bcd_to_dec(twi_read_nack());
-    
     twi_stop();
 }
 
@@ -195,21 +210,20 @@ void rtc_get_time(WaktuSistem* t) {
 // 5. DRIVER ADC (UNTUK POTENSIOMETER DI PF0)
 // =========================================================================
 void adc_init(void) {
-    ADMUX = (1 << REFS0);
-    ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);
+    ADMUX = (1 << REFS0); // Referensi AVCC dengan kapasitor eksternal pada pin AREF
+    ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0); // Prescaler 128
 }
 
 uint16_t adc_read_channel0(void) {
-    ADMUX = (ADMUX & 0xF8) | 0x00; 
-    ADCSRA |= (1 << ADSC); 
+    ADMUX = (ADMUX & 0xF8) | 0x00; // Pilih channel ADC0 (PF0)
+    ADCSRA |= (1 << ADSC); // Mulai Konversi
     while (ADCSRA & (1 << ADSC)); 
     return ADC; 
 }
 
 uint8_t ambil_level_pakan_simulasi(void) {
     uint16_t nilai_raw = adc_read_channel0();
-    uint8_t persentase = (uint8_t)(((uint32_t)nilai_raw * 100) / 1023);
-    return persentase;
+    return (uint8_t)(((uint32_t)nilai_raw * 100) / 1023);
 }
 
 // =========================================================================
@@ -217,43 +231,49 @@ uint8_t ambil_level_pakan_simulasi(void) {
 // =========================================================================
 void led_pwm_init(void) {
     DDRB |= (1 << PB7); 
-    TCCR0A = (1 << WGM01) | (1 << WGM00); 
-    TCCR0B = (1 << CS01) | (1 << CS00);
+    TCCR0A = (1 << WGM01) | (1 << WGM00); // Fast PWM Mode
+    TCCR0B = (1 << CS01) | (1 << CS00);   // Prescaler 64
     PORTB &= ~(1 << PB7); 
 }
 
 void simulasi_eksekusi_pakan(uint16_t durasi_ms) {
-    TCCR0A |= (1 << COM0A1); 
-    OCR0A = 255; 
+    TCCR0A |= (1 << COM0A1); // Hubungkan Timer ke pin PB7
+    OCR0A = 255;             // Set kecerahan penuh (100% duty-cycle)
     for (uint16_t i = 0; i < durasi_ms / 10; i++) {
         _delay_ms(10);
     }
-    TCCR0A &= ~(1 << COM0A1); 
-    PORTB &= ~(1 << PB7); 
+    TCCR0A &= ~(1 << COM0A1); // Putuskan pin dari timer
+    PORTB &= ~(1 << PB7);     // Matikan pin total
 }
 
 // =========================================================================
-// 7. PROGRAM UTAMA (MAIN ROUTINE ENTRY POINT)
+// 7. PROGRAM UTAMA
 // =========================================================================
 int main(void) {
-    // PERBAIKAN: Ubah Kecepatan Baud Rate ke 9600 agar Error Rate 0% (Stabil di Hardware)
-    usart0_init(9600);
+    usart0_init(9600); // Set baud rate ke 9600 demi nilai error clock 0%
     twi_init();
     lcd_init();
     adc_init();      
     led_pwm_init();  
     
-    DDRH &= ~(1 << PH4);
-    PORTH |= (1 << PH4);
+    DDRH &= ~(1 << PH4); // Pin D7 (PH4) sebagai input tombol
+    PORTH |= (1 << PH4);  // Aktifkan internal pull-up
     
-    sei(); 
+    sei(); // Aktifkan Interupsi Global
+    
+    // -------------------------------------------------------------------------
+    // ATUR JAM AWAL DI SINI (Contoh: Jam 14, Menit 30, Detik 0)
+    // PERINGATAN: Beri tanda komentar (//) pada baris ini setelah pengunggahan pertama 
+    // agar jam di dalam RTC tidak ter-reset kembali setiap kali alat dinyalakan!
+    // -------------------------------------------------------------------------
+    rtc_set_time(22, 30, 0); 
     
     WaktuSistem rtc_time;
     char buffer_kirim[64];
     char lcd_line1[17];
     char lcd_line2[17];
     
-    usart0_print("[MANGANPITIK v8.2.2] Mode Shield PCB: Potentio (PF0) & LED (PB7) Active.\n");
+    usart0_print("[MANGANPITIK v8.3.0] Ready - Hardware Sync Active.\n");
     
     uint8_t sumber_pakan = 0; 
 
@@ -261,18 +281,22 @@ int main(void) {
         rtc_get_time(&rtc_time);
         uint8_t stok_pakan = ambil_level_pakan_simulasi();
         
+        // Transmisi string data terstruktur menuju HMI Python
         sprintf(buffer_kirim, "TIME:%02d:%02d:%02d|STOK:%d|JADWAL:%02d:%02d\n", 
                 rtc_time.jam, rtc_time.menit, rtc_time.detik, stok_pakan, jadwal_jam[0], jadwal_menit[0]);
         usart0_print(buffer_kirim);
         
+        // Output Tampilan Layar LCD baris 1
         sprintf(lcd_line1, "JAM : %02d:%02d:%02d  ", rtc_time.jam, rtc_time.menit, rtc_time.detik);
         lcd_set_cursor(0, 0);
         lcd_print(lcd_line1);
         
+        // Output Tampilan Layar LCD baris 2
         sprintf(lcd_line2, "STOK: %d%%    OK ", stok_pakan);
         lcd_set_cursor(0, 1);
         lcd_print(lcd_line2);
         
+        // Cek Logika Pencocokan Jadwal Otomatis
         for(uint8_t i = 0; i < 3; i++) {
             if (rtc_time.jam == jadwal_jam[i] && 
                 rtc_time.menit == jadwal_menit[i] && 
@@ -289,6 +313,7 @@ int main(void) {
              menit_terakhir_eksekusi = 60; 
         }
         
+        // Cek Input Tombol Fisik Manual (PH4) dengan software debounce
         if (!(PINH & (1 << PH4))) {
             _delay_ms(20); 
             if (!(PINH & (1 << PH4))) {
@@ -298,26 +323,25 @@ int main(void) {
             }
         }
         
+        // Memproses instruksi Command Serial dari GUI Laptop
         if (cmd_ready) {
             if (strncmp((const char*)rx_buffer, "#FEED", 5) == 0) {
                 flag_beri_makan = 1;
                 sumber_pakan = 3; 
             } 
             else if (strncmp((const char*)rx_buffer, "#SET:", 5) == 0) {
-                uint8_t j1, m1, j2, m2, j3, m3;
-                if (sscanf((const char*)rx_buffer, "#SET:%02hhd:%02hhd,%02hhd:%02hhd,%02hhd:%02hhd", 
+                int j1, m1, j2, m2, j3, m3;
+                if (sscanf((const char*)rx_buffer, "#SET:%d:%d,%d:%d,%d:%d", 
                            &j1, &m1, &j2, &m2, &j3, &m3) == 6) {
-                    jadwal_jam[0] = j1; jadwal_menit[0] = m1;
-                    jadwal_jam[1] = j2; jadwal_menit[1] = m2;
-                    jadwal_jam[2] = j3; jadwal_menit[2] = m3;
+                    jadwal_jam[0] = (uint8_t)j1; jadwal_menit[0] = (uint8_t)m1;
+                    jadwal_jam[1] = (uint8_t)j2; jadwal_menit[1] = (uint8_t)m2;
+                    jadwal_jam[2] = (uint8_t)j3; jadwal_menit[2] = (uint8_t)m3;
                     usart0_print("[SYSTEM] 3 Jadwal diperbarui.\n");
                 }
             }
             else if (strncmp((const char*)rx_buffer, "#DUR:", 5) == 0) {
                 int durasi_baru = atoi((const char*)rx_buffer + 5);
-                if (durasi_baru < 500) {
-                    durasi_baru = 500;
-                }
+                if (durasi_baru < 500) durasi_baru = 500;
                 durasi_pakan_ms = (uint16_t)durasi_baru; 
                 
                 char info_durasi[64];
@@ -329,6 +353,7 @@ int main(void) {
             cmd_ready = 0;
         }
         
+        // Eksekusi Pakan Aktuator
         if (flag_beri_makan) {
             if (sumber_pakan == 1)      usart0_print("EVENT:AUTO\n");
             else if (sumber_pakan == 2) usart0_print("EVENT:PHYSICAL\n");

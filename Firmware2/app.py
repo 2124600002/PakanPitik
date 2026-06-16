@@ -6,7 +6,7 @@ import threading
 import time
 from datetime import datetime
 
-# PERBAIKAN: Ubah Kecepatan ke 9600 bps agar sinkron sempurna dengan register UBRR MCU
+# Menggunakan 9600 bps agar sinkron sempurna dengan register UBRR MCU tanpa data loss
 BAUDRATE = 9600
 
 class ManganPitikHMI:
@@ -38,6 +38,7 @@ class ManganPitikHMI:
         status_frame = ttk.LabelFrame(top_frame, text=" Live Status (Hardware Nyata) ", padding=(10, 10))
         status_frame.pack(side="left", fill="both", expand=True, padx=(0, 5))
 
+        # Label Indikator Notifikasi & Koneksi USB
         self.lbl_conn_status = ttk.Label(status_frame, text="Status: Mencari Hardware...", font=("Arial", 10, "italic"), foreground="orange")
         self.lbl_conn_status.pack(anchor="w", pady=(0, 5))
 
@@ -102,6 +103,15 @@ class ManganPitikHMI:
         self.tree.pack(fill="both", expand=True)
         scroll.config(command=self.tree.yview)
 
+    # Memperbarui data komponen UI secara aman di dalam Main Thread
+    def update_mcu_telemetry(self, waktu, stok):
+        self.lbl_time.config(text=f"Jam MCU : {waktu}")
+        self.progress_stok['value'] = stok
+        self.lbl_stok_percent.config(text=f"{stok} %")
+
+    def update_system_notification(self, pesan, warna):
+        self.lbl_conn_status.config(text=f"System: {pesan}", foreground=warna)
+
     def log_history(self, metode):
         waktu_sekarang = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         stok_saat_ini = self.lbl_stok_percent.cget("text")
@@ -123,9 +133,9 @@ class ManganPitikHMI:
             if target_port:
                 self.ser = serial.Serial(target_port, BAUDRATE, timeout=0.1)
                 
-                # PERBAIKAN: Jeda 2 detik agar ATmega selesai me-reboot dirinya akibat trigger DTR kabel USB
+                # Jeda krusial agar bootloader ATmega selesai reboot akibat trigger DTR kabel USB
                 time.sleep(2) 
-                self.ser.reset_input_buffer() # Bersihkan sisa data corrupt saat booting mcu
+                self.ser.reset_input_buffer() 
                 
                 self.lbl_conn_status.config(text=f"Status: Terhubung ({target_port})", foreground="green")
                 
@@ -150,26 +160,34 @@ class ManganPitikHMI:
 
     def parse_data(self, data):
         try:
+            # Menangkap log konfirmasi dari hardware ke sistem notifikasi GUI
+            if data.startswith("[SYSTEM]"):
+                pesan_sistem = data.replace("[SYSTEM]", "").strip()
+                self.root.after(0, self.update_system_notification, pesan_sistem, "blue")
+                return
+
+            # Mengubah tabel riwayat pakan secara aman menggunakan safe-thread wrapper .after()
             if data.startswith("EVENT:"):
                 event_type = data.split("EVENT:")[1]
                 if event_type == "AUTO":
-                    self.log_history("Otomatis (Jadwal)")
+                    self.root.after(0, self.log_history, "Otomatis (Jadwal)")
                 elif event_type == "PHYSICAL":
-                    self.log_history("Manual (Tombol Fisik)")
+                    self.root.after(0, self.log_history, "Manual (Tombol Fisik)")
                 elif event_type == "GUI":
-                    self.log_history("Manual (GUI Python)")
+                    self.root.after(0, self.log_history, "Manual (GUI Python)")
                 return 
 
             if '|' in data:
                 parts = data.split('|')
+                waktu = ""
+                stok = 0
                 for part in parts:
                     if part.startswith("TIME:"):
                         waktu = part.split("TIME:")[1]
-                        self.lbl_time.config(text=f"Jam MCU : {waktu}")
                     elif part.startswith("STOK:"):
                         stok = int(part.split("STOK:")[1])
-                        self.progress_stok['value'] = stok
-                        self.lbl_stok_percent.config(text=f"{stok} %")
+                
+                self.root.after(0, self.update_mcu_telemetry, waktu, stok)
         except Exception as e:
             pass
 
@@ -177,7 +195,7 @@ class ManganPitikHMI:
         if self.ser and self.ser.is_open:
             try:
                 self.ser.write(b'#FEED\n')
-                print("Command terkirim via Serial: #FEED")
+                print("Command terkirim: #FEED")
             except Exception as e:
                 print("Gagal mengirim perintah via Serial:", e)
 
@@ -191,11 +209,11 @@ class ManganPitikHMI:
                 command = f"#SET:{p},{si},{so}\n"
                 try:
                     self.ser.write(command.encode('utf-8'))
-                    print(f"Jadwal baru terkirim via Serial: {command.strip()}")
+                    print(f"Jadwal terkirim via Serial: {command.strip()}")
                 except Exception as e:
-                    print("Gagal mengirim jadwal via Serial")
+                    print("Gagal mengirim jadwal")
             else:
-                print("Format salah! Pastikan ketiganya berformat HH:MM")
+                print("Format salah! Gunakan HH:MM")
 
     def send_set_durasi(self):
         if self.ser and self.ser.is_open:
@@ -204,11 +222,11 @@ class ManganPitikHMI:
                 command = f"#DUR:{dur_str}\n"
                 try:
                     self.ser.write(command.encode('utf-8'))
-                    print(f"Durasi pakan baru terkirim via Serial: {command.strip()}")
+                    print(f"Durasi terkirim via Serial: {command.strip()}")
                 except Exception as e:
-                    print("Gagal mengirim durasi via Serial")
+                    print("Gagal mengirim durasi")
             else:
-                print("Format salah! Masukkan angka dalam milidetik (ms)")
+                print("Format salah! Gunakan angka milidetik")
 
     def on_closing(self):
         self.is_running = False
