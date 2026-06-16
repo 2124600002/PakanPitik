@@ -195,23 +195,19 @@ void rtc_get_time(WaktuSistem* t) {
 // 5. DRIVER ADC (UNTUK POTENSIOMETER DI PF0)
 // =========================================================================
 void adc_init(void) {
-    // AREF = AVcc (5V referensi internal)
     ADMUX = (1 << REFS0);
-    // Enable ADC, Prescaler 128 (16MHz/128 = 125kHz)
     ADCSRA = (1 << ADEN) | (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);
 }
 
 uint16_t adc_read_channel0(void) {
-    // Membaca dari channel ADC0 (PF0)
     ADMUX = (ADMUX & 0xF8) | 0x00; 
-    ADCSRA |= (1 << ADSC); // Mulai konversi
-    while (ADCSRA & (1 << ADSC)); // Tunggu hingga konversi selesai
-    return ADC; // Rentang nilai: 0 - 1023
+    ADCSRA |= (1 << ADSC); 
+    while (ADCSRA & (1 << ADSC)); 
+    return ADC; 
 }
 
 uint8_t ambil_level_pakan_simulasi(void) {
     uint16_t nilai_raw = adc_read_channel0();
-    // Konversi linear nilai ADC (0-1023) menjadi persentase (0-100%)
     uint8_t persentase = (uint8_t)(((uint32_t)nilai_raw * 100) / 1023);
     return persentase;
 }
@@ -220,32 +216,19 @@ uint8_t ambil_level_pakan_simulasi(void) {
 // 6. DRIVER ANALOG OUTPUT PWM (UNTUK LED DI PB7 / TIMER 0)
 // =========================================================================
 void led_pwm_init(void) {
-    DDRB |= (1 << PB7); // Set Pin 13 (PB7) sebagai Output
-    
-    // Setup Timer 0 untuk Fast PWM, TAPI JANGAN sambungkan ke pin PB7 dulu (COM0A1 = 0)
+    DDRB |= (1 << PB7); 
     TCCR0A = (1 << WGM01) | (1 << WGM00); 
-    // Prescaler 64
     TCCR0B = (1 << CS01) | (1 << CS00);
-    
-    // Paksa pin PB7 menjadi LOW secara digital agar mati total (0% mutlak)
     PORTB &= ~(1 << PB7); 
 }
 
 void simulasi_eksekusi_pakan(uint16_t durasi_ms) {
-    // 1. Sambungkan Timer 0 ke pin PB7 (Enable PWM via bit COM0A1)
     TCCR0A |= (1 << COM0A1); 
-    
-    // 2. Beri nilai Duty Cycle maksimal (Terang penuh)
     OCR0A = 255; 
-    
-    // 3. Delay pakan jatuh berdasarkan durasi_ms yang diset
     for (uint16_t i = 0; i < durasi_ms / 10; i++) {
         _delay_ms(10);
     }
-    
-    // 4. Putuskan kembali Timer dari pin PB7 (Disable PWM)
     TCCR0A &= ~(1 << COM0A1); 
-    // 5. Paksa pin PB7 kembali menjadi LOW mutlak
     PORTB &= ~(1 << PB7); 
 }
 
@@ -253,18 +236,17 @@ void simulasi_eksekusi_pakan(uint16_t durasi_ms) {
 // 7. PROGRAM UTAMA (MAIN ROUTINE ENTRY POINT)
 // =========================================================================
 int main(void) {
-    // Inisialisasi Subsistem
-    usart0_init(115200);
+    // PERBAIKAN: Ubah Kecepatan Baud Rate ke 9600 agar Error Rate 0% (Stabil di Hardware)
+    usart0_init(9600);
     twi_init();
     lcd_init();
-    adc_init();      // Inisialisasi Potensiometer (PF0)
-    led_pwm_init();  // Inisialisasi LED PWM (PB7)
+    adc_init();      
+    led_pwm_init();  
     
-    // Atur Pin D7 (PH4) untuk Push Button Manual Feed (Input dengan Pull-Up Internal)
     DDRH &= ~(1 << PH4);
     PORTH |= (1 << PH4);
     
-    sei(); // Aktifkan Interupsi Global
+    sei(); 
     
     WaktuSistem rtc_time;
     char buffer_kirim[64];
@@ -273,19 +255,16 @@ int main(void) {
     
     usart0_print("[MANGANPITIK v8.2.2] Mode Shield PCB: Potentio (PF0) & LED (PB7) Active.\n");
     
-    uint8_t sumber_pakan = 0; // 1: Jadwal, 2: Tombol Fisik, 3: Perintah GUI
+    uint8_t sumber_pakan = 0; 
 
     while (1) {
-        // 1. Ambil Data (RTC & ADC Potensiometer)
         rtc_get_time(&rtc_time);
         uint8_t stok_pakan = ambil_level_pakan_simulasi();
         
-        // 2. Transmisi Data ke Python (Format tetap dipertahankan)
         sprintf(buffer_kirim, "TIME:%02d:%02d:%02d|STOK:%d|JADWAL:%02d:%02d\n", 
                 rtc_time.jam, rtc_time.menit, rtc_time.detik, stok_pakan, jadwal_jam[0], jadwal_menit[0]);
         usart0_print(buffer_kirim);
         
-        // 3. Tampilkan Informasi di LCD
         sprintf(lcd_line1, "JAM : %02d:%02d:%02d  ", rtc_time.jam, rtc_time.menit, rtc_time.detik);
         lcd_set_cursor(0, 0);
         lcd_print(lcd_line1);
@@ -294,9 +273,7 @@ int main(void) {
         lcd_set_cursor(0, 1);
         lcd_print(lcd_line2);
         
-        // 4. Manajemen Logika Pemicu Jadwal Waktu Makan Otomatis
         for(uint8_t i = 0; i < 3; i++) {
-            // Cek apakah waktunya pas, DAN apakah kita belum mengeksekusinya di menit ini
             if (rtc_time.jam == jadwal_jam[i] && 
                 rtc_time.menit == jadwal_menit[i] && 
                 rtc_time.detik == 0 && 
@@ -304,16 +281,14 @@ int main(void) {
                 
                 flag_beri_makan = 1;
                 sumber_pakan = 1;
-                menit_terakhir_eksekusi = rtc_time.menit; // Kunci agar tidak terpanggil lagi di menit yang sama
+                menit_terakhir_eksekusi = rtc_time.menit; 
             }
         }
         
-        // Reset pengunci jika detik sudah lewat dari zona rawan (misal lebih dari 5 detik)
         if (rtc_time.detik > 5) {
              menit_terakhir_eksekusi = 60; 
         }
         
-        // 5. Logika Pemicu Tombol Fisik (PH4)
         if (!(PINH & (1 << PH4))) {
             _delay_ms(20); 
             if (!(PINH & (1 << PH4))) {
@@ -323,7 +298,6 @@ int main(void) {
             }
         }
         
-        // 6. Logika Pemicu via GUI Python (Serial Command)
         if (cmd_ready) {
             if (strncmp((const char*)rx_buffer, "#FEED", 5) == 0) {
                 flag_beri_makan = 1;
@@ -339,15 +313,11 @@ int main(void) {
                     usart0_print("[SYSTEM] 3 Jadwal diperbarui.\n");
                 }
             }
-            // --- LOGIKA DURASI DINAMIS ---
             else if (strncmp((const char*)rx_buffer, "#DUR:", 5) == 0) {
                 int durasi_baru = atoi((const char*)rx_buffer + 5);
-                
-                // Proteksi batas minimal (meskipun ini LED, kita pertahankan logika konsisten dengan Servo)
                 if (durasi_baru < 500) {
                     durasi_baru = 500;
                 }
-                
                 durasi_pakan_ms = (uint16_t)durasi_baru; 
                 
                 char info_durasi[64];
@@ -359,7 +329,6 @@ int main(void) {
             cmd_ready = 0;
         }
         
-        // 7. Pusat Eksekusi Aktuator (LED PWM)
         if (flag_beri_makan) {
             if (sumber_pakan == 1)      usart0_print("EVENT:AUTO\n");
             else if (sumber_pakan == 2) usart0_print("EVENT:PHYSICAL\n");
@@ -368,7 +337,6 @@ int main(void) {
             lcd_set_cursor(0, 1);
             lcd_print("STATUS: FEEDING ");
             
-            // Nyalakan LED PB7 selama durasi yang ditentukan
             simulasi_eksekusi_pakan(durasi_pakan_ms); 
             
             flag_beri_makan = 0;   
